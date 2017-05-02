@@ -17,19 +17,19 @@ class CreateCharactersTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string("name");
-            $table->integer("gender");
+            $table->string("gender");
             $table->string("class");
             $table->bigInteger("exp");
             $table->bigInteger("gold");
-            $table->integer("hp");
-            $table->integer("p_attack");
-            $table->integer("m_attack");
-            $table->integer("p_defense");
-            $table->integer("m_defense");
-            $table->integer("speed");
-            $table->integer("weapon_right");
-            $table->integer("weapon_left");
-            $table->integer("victory_points");
+            $table->integer("hp")->nullable();
+            $table->integer("p_attack")->nullable();
+            $table->integer("m_attack")->nullable();
+            $table->integer("p_defense")->nullable();
+            $table->integer("m_defense")->nullable();
+            $table->integer("speed")->nullable();
+            $table->integer("weapon_right")->nullable();
+            $table->integer("weapon_left")->nullable();
+            $table->integer("victory_points")->nullable();
         });
     }
 

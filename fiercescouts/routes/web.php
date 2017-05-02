@@ -11,6 +11,8 @@
 |
 */
 
+Route::resource("characters", "CharacterController");
+
 Route::get('/', function () {
     return view('welcome');
 });
