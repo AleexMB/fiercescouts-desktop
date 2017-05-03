@@ -21,8 +21,8 @@ class CreateItemsTable extends Migration
             $table->integer("hp")->nullable();
             $table->integer("p_attack")->nullable();
             $table->integer("m_attack")->nullable();
-            $table->integer("p_defense")->nullable();
-            $table->integer("m_defense")->nullable();
+            $table->integer("p_defence")->nullable();
+            $table->integer("m_defence")->nullable();
             $table->integer("speed")->nullable();
             $table->integer("itemlv")->nullable();
         });

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use fiercescouts\Character;
 use Auth;
 
+//include(app_path().'/includes/classes.php');
+
 class CharacterController extends Controller
 {
 	/**
@@ -46,6 +48,11 @@ class CharacterController extends Controller
 		$character = new Character;
 		$character->name = $request->input('name');
         $character->class = $request->input('class');
+
+        // $classStats = ChooseClass::assignClass($request->input('class'));
+
+        // $character->hp = $classStats[0];
+
         $character->gender = $request->input('gender');
         $character->exp = 0;
         $character->gold = 0;

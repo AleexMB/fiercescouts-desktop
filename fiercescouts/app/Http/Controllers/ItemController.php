@@ -44,16 +44,16 @@ class CharacterController extends Controller
 	 */
 	public function store(Request $request)
 	{
-		$character = new Character;
-		$character->name = $request->input('name');
-        $character->class = $request->input('class');
-        $character->gender = $request->input('gender');
-        $character->exp = 0;
-        $character->gold = 0;
-        $character->user_id = Auth::id();
-        $character->save();
+		// $character = new Character;
+		// $character->name = $request->input('name');
+  //       $character->class = $request->input('class');
+  //       $character->gender = $request->input('gender');
+  //       $character->exp = 0;
+  //       $character->gold = 0;
+  //       $character->user_id = Auth::id();
+  //       $character->save();
 
-        return redirect('characters');
+  //       return redirect('characters');
 	}
 
 	/**
