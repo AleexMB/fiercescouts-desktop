@@ -12,6 +12,7 @@
 */
 
 Route::resource("characters", "CharacterController");
+Route::resource("items", "ItemController");
 
 Route::get('/', function () {
     return view('welcome');

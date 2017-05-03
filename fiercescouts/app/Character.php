@@ -11,4 +11,8 @@ class Character extends Model
     public function users(){
     	$this->hasmany('fiercescouts\Character');
     }
+
+    public function items(){
+        $this->belongsto('fiercescouts\Character');
+    }
 }
