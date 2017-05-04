@@ -8,7 +8,11 @@
             <td>Name</td>
             <td>Class</td>
             <td>Gender</td>
-            <!--<td>Gender</td>-->
+            <td>HP</td>
+            <td>P ATK</td>
+            <td>M ATK</td>
+            <td>P DEF</td>
+            <td>M DEF</td>
         </tr>
     </thead>
     <tbody>
@@ -18,6 +22,11 @@
             <td>{{ $value->name }}</td>
             <td>{{ $value->class }}</td>
             <td>{{ $value->gender }}</td>
+            <td>{{ $value->hp }}</td>
+            <td>{{ $value->p_attack }}</td>
+            <td>{{ $value->p_defence }}</td>
+            <td>{{ $value->m_attack }}</td>
+            <td>{{ $value->m_defence }}</td>
 
             <!-- we will also add show, edit, and delete buttons -->
             <td>

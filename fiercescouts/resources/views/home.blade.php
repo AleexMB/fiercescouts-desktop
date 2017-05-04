@@ -11,7 +11,7 @@
                     You are logged in!
                 </div>
                 <div class="panel-body">
-                    <button>Create character</button>
+                    <button type="button" onclick="window.location='{{ route("characters.create") }}'">Create character</button>
                 </div>
             </div>
         </div>

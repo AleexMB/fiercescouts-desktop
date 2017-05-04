@@ -99,8 +99,8 @@ class CharacterController extends Controller
 	public function destroy($id)
 	{
 		// DELETE
-		$character = Character::find($id);
-		$character->delete();
-		return redirect('characters');
+		$item = Item::find($id);
+		$item->delete();
+		return redirect('items');
 	}
 }

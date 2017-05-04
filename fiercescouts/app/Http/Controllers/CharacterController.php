@@ -6,8 +6,6 @@ use Illuminate\Http\Request;
 use fiercescouts\Character;
 use Auth;
 
-//include(app_path().'/includes/classes.php');
-
 class CharacterController extends Controller
 {
 	/**
@@ -45,17 +43,21 @@ class CharacterController extends Controller
 	 */
 	public function store(Request $request)
 	{
+		//creo il personaggio
 		$character = new Character;
 		$character->name = $request->input('name');
         $character->class = $request->input('class');
-
-        // $classStats = ChooseClass::assignClass($request->input('class'));
-
-        // $character->hp = $classStats[0];
-
+        //richiamo metodo per generare le stat iniziali e le assegno
+        $classStats = GameManager::assignClass($request->input('class'));
+        $character->hp = $classStats[0];
+        $character->p_attack = $classStats[1];
+        $character->m_attack = $classStats[2];
+        $character->p_defence = $classStats[3];
+        $character->m_defence = $classStats[4];
         $character->gender = $request->input('gender');
         $character->exp = 0;
         $character->gold = 0;
+        $character->victory_points = 0;
         $character->user_id = Auth::id();
         $character->save();
 
