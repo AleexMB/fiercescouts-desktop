@@ -21,7 +21,12 @@
             <td>{{ $value->id }}</td>
             <td>{{ $value->name }}</td>
             <td>{{ $value->class }}</td>
-            <td>{{ $value->gender }}</td>
+            @if ($value->gender == "M")
+                <td><img src="{{URL::asset('/images/male.png')}}" alt="male icon" height="15" width="15"></td>
+            @else
+                <td><img src="{{URL::asset('/images/female.png')}}" alt="male icon" height="15" width="15"></td>
+            @endif
+            <!--<td>{{ $value->gender }}</td>-->
             <td>{{ $value->hp }}</td>
             <td>{{ $value->p_attack }}</td>
             <td>{{ $value->p_defence }}</td>
