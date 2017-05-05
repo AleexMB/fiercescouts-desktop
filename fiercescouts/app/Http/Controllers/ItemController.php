@@ -3,11 +3,11 @@
 namespace fiercescouts\Http\Controllers;
 
 use Illuminate\Http\Request;
-use fiercescouts\Character;
+use DB;
 use fiercescouts\Item;
 use Auth;
 
-class CharacterController extends Controller
+class ItemController extends Controller
 {
 	/**
 	 * Display a listing of the resource.
@@ -22,8 +22,8 @@ class CharacterController extends Controller
 
 	public function index()
 	{
-		$items = Item::all()->where('user_id', Auth::id());
-        return view("characters.index")->with('characters', $characters);
+		// $items = Item::all()->where('user_id', Auth::id());
+  //       return view("characters.index")->with('characters', $characters);
 	}
 
 	/**
@@ -33,7 +33,7 @@ class CharacterController extends Controller
 	 */
 	public function create()
 	{
-		return view("characters.create", compact("characters"));
+		return view("items.create");
 	}
 
 	/**
@@ -44,6 +44,17 @@ class CharacterController extends Controller
 	 */
 	public function store(Request $request)
 	{
+		$chestsToOpen = DB::table('characters')->where('user_id', Auth::id())->value('chests');
+			if ($chestsToOpen == 0){
+				$item = new Item;
+				$item->name = "coltello";
+
+				$item->character_id = DB::table('characters')->where('user_id', Auth::id())->value('id');
+
+				$item->save();
+			} else {
+				return redirect('home');
+			}
 		// $character = new Character;
 		// $character->name = $request->input('name');
   //       $character->class = $request->input('class');

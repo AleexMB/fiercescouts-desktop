@@ -30,6 +30,8 @@ class CreateCharactersTable extends Migration
             $table->integer("weapon_right")->nullable();
             $table->integer("weapon_left")->nullable();
             $table->integer("victory_points")->nullable();
+            $table->integer("chests")->nullable();
+            $table->integer("chests_limit")->nullable();
         });
     }
 
