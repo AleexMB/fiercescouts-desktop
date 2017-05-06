@@ -16,7 +16,7 @@
         </tr>
     </thead>
     <tbody>
-    @foreach($characters as $key => $value)
+    @foreach($items as $key => $value)
         <tr>
             <td>{{ $value->id }}</td>
             <td>{{ $value->name }}</td>

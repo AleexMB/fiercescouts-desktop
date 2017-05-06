@@ -3,13 +3,13 @@
 namespace fiercescouts\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
-use fiercescouts\Item;
+use fiercescouts\Character;
 use Auth;
+use DB;
 
-class ItemController extends Controller
+class LadderController extends Controller
 {
-	/**
+    /**
 	 * Display a listing of the resource.
 	 *
 	 * @return \Illuminate\Http\Response
@@ -22,6 +22,8 @@ class ItemController extends Controller
 
 	public function index()
 	{
+		$ranks = DB::table('characters')->orderBy('victory_points', 'desc')->take(10)->get();
+		return view('ladders.index')->with('ranks', $ranks);
 		//$items = Item::all()->where('character_id')belongsTo(Auth::Id());
         //return view("items.index")->with('items', $items);
 	}
@@ -33,7 +35,7 @@ class ItemController extends Controller
 	 */
 	public function create()
 	{
-		return view("items.create");
+		//
 	}
 
 	/**
@@ -44,27 +46,7 @@ class ItemController extends Controller
 	 */
 	public function store(Request $request)
 	{
-		$chestsToOpen = DB::table('characters')->where('user_id', Auth::id())->value('chests');
-			if ($chestsToOpen == 0){
-				$item = new Item;
-				$item->name = "coltello";
-
-				$item->character_id = DB::table('characters')->where('user_id', Auth::id())->value('id');
-
-				$item->save();
-			} else {
-				return redirect('home');
-			}
-		// $character = new Character;
-		// $character->name = $request->input('name');
-  //       $character->class = $request->input('class');
-  //       $character->gender = $request->input('gender');
-  //       $character->exp = 0;
-  //       $character->gold = 0;
-  //       $character->user_id = Auth::id();
-  //       $character->save();
-
-  //       return redirect('characters');
+		//
 	}
 
 	/**
@@ -109,9 +91,6 @@ class ItemController extends Controller
 	 */
 	public function destroy($id)
 	{
-		// DELETE
-		$item = Item::find($id);
-		$item->delete();
-		return redirect('items');
+		//
 	}
 }

@@ -17,10 +17,10 @@ class CreateCharactersTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string("name");
-            $table->string("gender");
-            $table->string("class");
-            $table->bigInteger("exp");
-            $table->bigInteger("gold");
+            $table->string("gender")->nullable();
+            $table->string("class")->nullable();
+            $table->bigInteger("exp")->nullable();
+            $table->bigInteger("gold")->nullable();
             $table->integer("hp")->nullable();
             $table->integer("p_attack")->nullable();
             $table->integer("m_attack")->nullable();

@@ -13,6 +13,7 @@
 
 Route::resource("characters", "CharacterController");
 Route::resource("items", "ItemController");
+Route::resource("ladders", "LadderController");
 
 Route::get('/', function () {
     return view('welcome');
