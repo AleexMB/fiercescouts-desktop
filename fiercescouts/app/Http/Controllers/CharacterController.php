@@ -47,6 +47,8 @@ class CharacterController extends Controller
 		$character = new Character;
 		$character->name = $request->input('name');
         $character->class = $request->input('class');
+        $character->level = 1;
+
         //richiamo metodo per generare le stat iniziali e le assegno
         $classStats = GameManager::assignClass($request->input('class'));
         $character->hp = $classStats[0];
@@ -85,7 +87,11 @@ class CharacterController extends Controller
 	 */
 	public function edit($id)
 	{
-		//
+		$character = Character::find($id);
+
+        // show the edit form and pass the nerd
+        return view('characters.edit')
+            ->with('character', $character);
 	}
 
 	/**
@@ -97,7 +103,27 @@ class CharacterController extends Controller
 	 */
 	public function update(Request $request, $id)
 	{
-		//
+		// store
+        $character = Character::find($id);
+
+        $actualExp = $character->exp;
+        $actualLevel = $character->level;
+
+        $updatedStats = GameManager::levelUp($actualLevel, $actualExp);
+        if ($updatedStats[5]) {
+	        $character->hp += $updatedStats[0];
+	        $character->p_attack += $updatedStats[1];
+	        $character->m_attack += $updatedStats[2];
+	        $character->p_defence += $updatedStats[3];
+	        $character->m_defence += $updatedStats[4];
+	        $character->exp = 0;
+	        $character->level += 1;
+
+        	$character->save();
+        }
+
+        // redirect
+        return redirect('characters');
 	}
 
 	/**

@@ -18,6 +18,7 @@ class CreateCharactersTable extends Migration
             $table->timestamps();
             $table->string("name");
             $table->string("gender")->nullable();
+            $table->integer("level")->nullable();
             $table->string("class")->nullable();
             $table->bigInteger("exp")->nullable();
             $table->bigInteger("gold")->nullable();

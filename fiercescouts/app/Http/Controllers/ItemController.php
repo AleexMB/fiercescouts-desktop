@@ -23,7 +23,8 @@ class ItemController extends Controller
 	public function index()
 	{
 		//$items = Item::all()->where('character_id')belongsTo(Auth::Id());
-        //return view("items.index")->with('items', $items);
+		$items = Item::all();
+        return view("items.index")->with('items', $items);
 	}
 
 	/**
@@ -47,11 +48,17 @@ class ItemController extends Controller
 		$chestsToOpen = DB::table('characters')->where('user_id', Auth::id())->value('chests');
 			if ($chestsToOpen == 0){
 				$item = new Item;
-				$item->name = "coltello";
-
+				$item->rarity = GameManager::assignRarity();
+				if ($item->rarity == "legendary") {
+					$item->name = NameGenerator::legendaryNameGenerator();
+				} else {
+					$item->name = NameGenerator::commonNameGenerator();
+				}
+				
 				$item->character_id = DB::table('characters')->where('user_id', Auth::id())->value('id');
 
 				$item->save();
+				return redirect('items');
 			} else {
 				return redirect('home');
 			}

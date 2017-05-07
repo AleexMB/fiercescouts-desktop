@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Character extends Model
 {
-	protected $fillable = ["name", "gender", "class", "exp", "gold", "hp", "p_attack", "m_attack", "p_defence", "m_defence", "speed", "weapon_right", "weapon_left", "victory_points", "chests", "chests_limit",];
+	protected $fillable = ["name", "gender", "level", "class", "exp", "gold", "hp", "p_attack", "m_attack", "p_defence", "m_defence", "speed", "weapon_right", "weapon_left", "victory_points", "chests", "chests_limit",];
 	
     public function users(){
     	$this->hasmany('fiercescouts\Character');
