@@ -32,8 +32,8 @@
             <td>{{ $value->exp }}</td>
             <td>{{ $value->hp }}</td>
             <td>{{ $value->p_attack }}</td>
-            <td>{{ $value->p_defence }}</td>
             <td>{{ $value->m_attack }}</td>
+            <td>{{ $value->p_defence }}</td>
             <td>{{ $value->m_defence }}</td>
 
             <td>

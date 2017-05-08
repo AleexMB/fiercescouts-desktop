@@ -4,6 +4,7 @@ namespace fiercescouts\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use fiercescouts\Character;
 use fiercescouts\Item;
 use Auth;
 
@@ -23,7 +24,8 @@ class ItemController extends Controller
 	public function index()
 	{
 		//$items = Item::all()->where('character_id')belongsTo(Auth::Id());
-		$items = Item::all();
+		$character = Character::all()->where('user_id', Auth::id())->first();
+		$items = Item::all()->where('character_id', $character->id);
         return view("items.index")->with('items', $items);
 	}
 
@@ -54,6 +56,17 @@ class ItemController extends Controller
 				} else {
 					$item->name = NameGenerator::commonNameGenerator();
 				}
+
+				$character = Character::all()->where('user_id', Auth::id())->first();
+
+				$stats = GameManager::assignItemStats($character->level, $item->rarity);
+
+				$item->hp = $stats[0];
+				$item->p_attack = $stats[1];
+				$item->m_attack = $stats[2];
+				$item->p_defence = $stats[3];
+				$item->m_defence = $stats[4];
+				$item->itemlv = $stats[5];
 				
 				$item->character_id = DB::table('characters')->where('user_id', Auth::id())->value('id');
 
@@ -62,16 +75,6 @@ class ItemController extends Controller
 			} else {
 				return redirect('home');
 			}
-		// $character = new Character;
-		// $character->name = $request->input('name');
-  //       $character->class = $request->input('class');
-  //       $character->gender = $request->input('gender');
-  //       $character->exp = 0;
-  //       $character->gold = 0;
-  //       $character->user_id = Auth::id();
-  //       $character->save();
-
-  //       return redirect('characters');
 	}
 
 	/**

@@ -32,7 +32,12 @@ class CharacterController extends Controller
 	 */
 	public function create()
 	{
-		return view("characters.create", compact("characters"));
+		$checkHowMany = Character::all()->where('user_id', Auth::id())->count();
+		if ($checkHowMany >= 1) {
+			return view("home");
+		} else {
+			return view("characters.create", compact("characters"));
+		}
 	}
 
 	/**

@@ -85,6 +85,42 @@ class GameManager extends Controller
 		return $stats;
     }
 
+    //METODO PER ASSEGNARE LE STAT AD ITEM
+    public static function assignItemStats($level, $rarity) {
+        if ($rarity == "common") {
+            $hp = (rand(2, 4) + rand($level, $level + 5));
+            $p_attack = (rand(2, 4) + rand($level, $level + 5));
+            $m_attack = (rand(2, 4) + rand($level, $level + 5));
+            $p_defence = (rand(2, 4) + rand($level, $level + 5));
+            $m_defence = (rand(2, 4) + rand($level, $level + 5));
+        } else if ($rarity == "rare") {
+            $hp = (rand(2, 6) + rand($level, $level + 5));
+            $p_attack = (rand(3, 6) + rand($level, $level + 8));
+            $m_attack = (rand(3, 6) + rand($level, $level + 8));
+            $p_defence = (rand(3, 6) + rand($level, $level + 8));
+            $m_defence = (rand(3, 6) + rand($level, $level + 8));
+        } else {
+            $hp = (rand(6, 10) + rand($level, $level + 16));
+            $p_attack = (rand(6, 10) + rand($level, $level + 16));
+            $m_attack = (rand(6, 10) + rand($level, $level + 16));
+            $p_defence = (rand(6, 10) + rand($level, $level + 16));
+            $m_defence = (rand(6, 10) + rand($level, $level + 16));
+        }
+
+        $itemLevel = ($hp + $p_attack + $m_attack + $p_defence + $m_defence) / 5;
+
+        $stats = array (
+            $hp,
+            $p_attack,
+            $m_attack,
+            $p_defence,
+            $m_defence,
+            $itemLevel,
+        );
+
+        return $stats;
+    }
+
     //METODO PER ASSEGNARE LA RARITÁ A UN ITEM
     public static function assignRarity() {
     	$rarity = "";
