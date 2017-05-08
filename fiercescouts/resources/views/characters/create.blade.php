@@ -16,7 +16,7 @@
 
     <div class="form-group">
         {{ Form::label('class', 'Class') }}
-        {{ Form::select('class', ['warrior' => 'Warrior', 'mage' => 'Mage', 'assassin' => 'Assassin']) }}
+        {{ Form::select('class', ['warrior' => 'Warrior', 'mage' => 'Mage', 'assassin' => 'Assassin', 'demon' => 'Demon', 'monk' => 'Monk']) }}
     </div>
 
     <div class="form-group">

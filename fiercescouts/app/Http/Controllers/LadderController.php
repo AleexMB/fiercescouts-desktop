@@ -24,8 +24,6 @@ class LadderController extends Controller
 	{
 		$ranks = DB::table('characters')->orderBy('victory_points', 'desc')->take(10)->get();
 		return view('ladders.index')->with('ranks', $ranks);
-		//$items = Item::all()->where('character_id')belongsTo(Auth::Id());
-        //return view("items.index")->with('items', $items);
 	}
 
 	/**

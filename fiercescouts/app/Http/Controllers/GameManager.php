@@ -18,25 +18,39 @@ class GameManager extends Controller
 		switch ($class) {
 			case "warrior":
 				$hp = rand(100, 115);
-				$p_attack = rand(8, 11);
-				$m_attack = rand(8, 12);
-				$p_defence = rand(7, 10);
-				$m_defence = rand(7, 10);
+				$p_attack = rand(10, 14);
+				$m_attack = rand(2, 6);
+				$p_defence = rand(10, 14);
+				$m_defence = rand(6, 10);
 				break;
 			case "mage":
 				$hp = rand(100, 115);
-				$p_attack = rand(8, 11);
-				$m_attack = rand(8, 12);
-				$p_defence = rand(7, 10);
-				$m_defence = rand(7, 10);
+				$p_attack = rand(4, 8);
+				$m_attack = rand(10, 14);
+				$p_defence = rand(4, 8);
+				$m_defence = rand(10, 14);
 				break;
 			case "assassin":
 				$hp = rand(100, 115);
-				$p_attack = rand(8, 11);
-				$m_attack = rand(8, 12);
-				$p_defence = rand(7, 10);
-				$m_defence = rand(7, 10);
+				$p_attack = rand(20, 24);
+				$m_attack = rand(2, 6);
+				$p_defence = rand(4, 9);
+				$m_defence = rand(4, 9);
 				break;
+            case "demon":
+                $hp = rand(100, 115);
+                $p_attack = rand(10, 14);
+                $m_attack = rand(10, 14);
+                $p_defence = rand(10, 14);
+                $m_defence = rand(2, 6);
+                break;
+            case "monk":
+                $hp = rand(100, 115);
+                $p_attack = rand(3, 7);
+                $m_attack = rand(11, 15);
+                $p_defence = rand(14, 18);
+                $m_defence = rand(4, 8);
+                break;
 		}
 
 		$stats = array (
