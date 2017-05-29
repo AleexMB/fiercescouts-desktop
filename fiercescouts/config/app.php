@@ -178,6 +178,8 @@ return [
         fiercescouts\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
 
+        fiercescouts\Providers\v1\CharacterServiceProvider::class,
+
     ],
 
     /*

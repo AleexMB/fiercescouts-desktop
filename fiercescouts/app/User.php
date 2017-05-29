@@ -27,6 +27,14 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function save(array $options = []) {
+        if (empty($this->api_token)) {
+            $this->api_token = str_random(60);
+        }
+
+        return parent::save($options);
+    }
+
     public function characters(){
         $this->belongsto('fiercescouts\User');
     }
