@@ -23,12 +23,12 @@ class BattleManager extends Controller
 
 
     	//guardare condizione nel where
-		$opponent = Character::all()->except($id)->random(1)->where('level', $level);
-		
-    	//$character = Character::all()->where('user_id', Auth::id())->first()->get();
-    	//$opponent = Character::all()->where('level', 1)->first()->get();
+        $opponent = Character::inRandomOrder()->where('user_id', '!=', Auth::id())->where('level', $level)->firstOrFail();
+
+
         $characterID = $id;
-        $opponentID = 8;
+        $opponentID = $opponent['attributes']['id'];
+        //dd($opponent['attributes']['id']);
 
         BattleManager::battleResolve($characterID, $opponentID);
         //return Redirect::to('/home');
@@ -41,24 +41,31 @@ class BattleManager extends Controller
     public function battleResolve($characterID, $opponentID) {
         $turn = 0;
 
-
         $character = Character::where('id', $characterID)->firstOrFail();
         $opponent = Character::where('id', $opponentID)->firstOrFail();
 
         $opponentHP = $opponent->hp;
         $opponentPA = $opponent->p_attack;
+        $opponentMA = $opponent->m_attack;
+        $opponentPD = $opponent->p_defence;
+        $opponentMD = $opponent->m_defence;
 
         $characterHP = $character->hp;
         $characterPA = $character->p_attack;
+        $characterMA = $character->m_attack;
+        $characterPD = $character->p_defence;
+        $characterMD = $character->m_defence;
 
-        echo($opponentHP);
+    	while (($characterHP > 0) && ($opponentHP > 0)) {
+    		$opponentHP -= ($characterPA + $characterMA) - ($opponentPD + $opponentMD);
+            $characterHP -= ($opponentPA + $opponentMA) - ($characterPD + $characterMD);
 
-    	while ($opponentHP > 1) {
-    		$opponentHP -= $characterPA;
-            echo($opponentHP);
-
-            if ($characterHP <= 0 || $opponentHP <= 0) {
-                
+            if ($opponentHP <= 0) {
+                $character->victory_points += (1 + ($opponent->level - $character->level)) * 2;
+                $character->save();
+                echo("I won");
+            } elseif ($characterHP <= 0) {
+                echo("I've lost");
             }
     	}
     }
