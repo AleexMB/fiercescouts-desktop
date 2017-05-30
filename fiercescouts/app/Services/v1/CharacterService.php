@@ -32,7 +32,6 @@ class CharacterService {
 	protected $rules = [
 		'id' => 'required',
 		'name' => 'required',
-		'exp' => 'required',
 	];
 
 	public function validate($character) {

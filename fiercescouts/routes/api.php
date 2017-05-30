@@ -20,7 +20,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('/v1/characters', v1\CharacterController::class);
-Route::resource('/v1/users', v1\UserController::class);
+//Route::resource('/v1/users', v1\UserController::class);
+//Route::resource('/v1/login', 'v1\UserController@logIn');
+Route::post('/v1/login', 'v1\UserController@logIn');
+
 
 // api/v1/characters
 

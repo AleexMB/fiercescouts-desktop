@@ -2,41 +2,42 @@
 
 namespace fiercescouts\Services\v1;
 
+use Illuminate\Support\Facades\Hash;
 use fiercescouts\Character;
 use fiercescouts\User;
 use Validator;
 
 class UserService {
 
-	// protected $supportedIncludes = [
-	// ];
+	public function logUser($request) {
+		$email = $request->input('email');
+		$password = $request->input('password');
+
+		$user = User::where('email', $email)->first();
+
+		if ($user) {
+			$hashedPassword = $user->password;
+
+			if (Hash::check($password, $hashedPassword)){
+				$character = Character::where('user_id', $user->id)->firstOrFail();
+
+				return ([
+					"api_token" => $user->api_token,
+					"character_id" => $character->id,
+					"character_name" => $character->name,
+					]);
+			} else {
+				return (["Incorrect password, try again."]);
+			}
+		} else {
+			return (["This email address is not registered."]);
+		}
+	}
 
 	public function getUsers($parameters) {
 		if (empty($parameters)) {
 			return $this->filterUsers(User::all());
 		}
-
-	// 	$withKeys = [];
-
-	// 	if (isset($parameters['include'])) {
-	// 		$includeParameters = explode(',', $parameters['include']);
-	// 		$includes = array_intersect($this->$supportedIncludes, $includeParameters);
-	// 		$withKeys = array_keys($includes);
-	// 	}
-
-	// 	return $this->filterUsers(User::with($withKeys)->get(), $withKeys);
-	//  }
-
-	// protected $rules = [
-	// 	// 'id' => 'required',
-	// 	// 'name' => 'required',
-	// 	// 'exp' => 'required',
-	// ];
-
-	// public function validate($user) {
-	// 	$validator = Validator::make($user, $this->rules);
-
-	// 	$validator->validate();
 	}
 
 	public function getUser($name) {

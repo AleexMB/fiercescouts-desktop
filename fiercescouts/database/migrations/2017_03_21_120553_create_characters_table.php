@@ -16,7 +16,7 @@ class CreateCharactersTable extends Migration
         Schema::create('characters', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->string("name");
+            $table->string("name")->unique();
             $table->string("gender")->nullable();
             $table->integer("level")->nullable();
             $table->string("class")->nullable();
@@ -30,6 +30,8 @@ class CreateCharactersTable extends Migration
             $table->integer("speed")->nullable();
             $table->integer("weapon_right")->nullable();
             $table->integer("weapon_left")->nullable();
+            $table->integer("skill_one")->nullable();
+            $table->integer("skill_two")->nullable();
             $table->integer("victory_points")->nullable();
             $table->integer("chests")->nullable();
             $table->integer("chests_limit")->nullable();

@@ -31,4 +31,10 @@ class BattleManager extends Controller
 	    	->with('character', $character)
 	    	->with('opponent', $opponent);
     }
+
+    public function battleResolve($character, $opponent) {
+    	while ($character->hp >= 0 || $opponent->hp >= 0) {
+    		
+    	}
+    }
 }

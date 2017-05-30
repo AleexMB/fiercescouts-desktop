@@ -24,6 +24,7 @@ class UserController extends Controller
         $user = $this->users->logUser($request);
         //return data
         return response()->json($user, 200);
+        
     }
 
 	/**

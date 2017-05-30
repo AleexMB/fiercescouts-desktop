@@ -17,7 +17,7 @@ class CharacterController extends Controller
 	public function __construct(CharacterService $service) {
 		$this->characters = $service;
 
-        //$this->middleware('auth:api', ['only' => ['store', 'update', 'destroy']]);
+        $this->middleware('auth:api', ['only' => ['store', 'update', 'destroy']]);
 	}
     /**
      * Display a listing of the resource.
