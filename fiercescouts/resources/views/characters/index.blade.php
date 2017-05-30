@@ -4,6 +4,7 @@
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
+            <td>propic</td>
             <td>ID</td>
             <td>Name</td>
             <td>Class</td>
@@ -20,6 +21,34 @@
     <tbody>
     @foreach($characters as $key => $value)
         <tr>
+
+            @if ($value->gender == "M")
+                @if ($value->class == "warrior")
+                    <td><img src="{{URL::asset('/images/characters/male_warrior.png')}}" alt="character" height="50" width="50"></td>
+                @elseif ($value->class == "mage")
+                    <td><img src="{{URL::asset('/images/characters/male_mage.png')}}" alt="character" height="50" width="50"></td>
+                @elseif ($value->class == "assassin")
+                    <td><img src="{{URL::asset('/images/characters/male_assassin.png')}}" alt="character" height="50" width="50"></td>
+                @elseif ($value->class == "demon")
+                    <td><img src="{{URL::asset('/images/characters/male_demon.png')}}" alt="character" height="50" width="50"></td>
+                @elseif ($value->class == "monk")
+                    <td><img src="{{URL::asset('/images/characters/male_monk.png')}}" alt="character" height="50" width="50"></td>
+                @endif
+            @else
+                @if ($value->class == "warrior")
+                    <td><img src="{{URL::asset('/images/characters/female_warrior.png')}}" alt="character" height="50" width="50"></td>
+                @elseif ($value->class == "mage")
+                    <td><img src="{{URL::asset('/images/characters/female_mage.png')}}" alt="character" height="50" width="50"></td>
+                @elseif ($value->class == "assassin")
+                    <td><img src="{{URL::asset('/images/characters/female_assassin.png')}}" alt="character" height="50" width="50"></td>
+                @elseif ($value->class == "demon")
+                    <td><img src="{{URL::asset('/images/characters/female_demon.png')}}" alt="character" height="50" width="50"></td>
+                @elseif ($value->class == "monk")
+                    <td><img src="{{URL::asset('/images/characters/female_monk.png')}}" alt="character" height="50" width="50"></td>
+                @endif
+            @endif
+
+
             <td>{{ $value->id }}</td>
             <td>{{ $value->name }}</td>
             <td>{{ $value->class }}</td>

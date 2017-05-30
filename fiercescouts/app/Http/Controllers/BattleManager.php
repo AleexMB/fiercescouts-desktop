@@ -4,6 +4,7 @@ namespace fiercescouts\Http\Controllers;
 
 use Illuminate\Http\Request;
 use fiercescouts\Character;
+use Redirect;
 use Auth;
 use DB;
 
@@ -26,15 +27,39 @@ class BattleManager extends Controller
 		
     	//$character = Character::all()->where('user_id', Auth::id())->first()->get();
     	//$opponent = Character::all()->where('level', 1)->first()->get();
+        $characterID = $id;
+        $opponentID = 8;
 
-    	return view("battles.battle")
-	    	->with('character', $character)
-	    	->with('opponent', $opponent);
+        BattleManager::battleResolve($characterID, $opponentID);
+        //return Redirect::to('/home');
+
+    	// return view("battles.battle")
+	    // 	->with('character', $character)
+	    // 	->with('opponent', $opponent);
     }
 
-    public function battleResolve($character, $opponent) {
-    	while ($character->hp >= 0 || $opponent->hp >= 0) {
-    		
+    public function battleResolve($characterID, $opponentID) {
+        $turn = 0;
+
+
+        $character = Character::where('id', $characterID)->firstOrFail();
+        $opponent = Character::where('id', $opponentID)->firstOrFail();
+
+        $opponentHP = $opponent->hp;
+        $opponentPA = $opponent->p_attack;
+
+        $characterHP = $character->hp;
+        $characterPA = $character->p_attack;
+
+        echo($opponentHP);
+
+    	while ($opponentHP > 1) {
+    		$opponentHP -= $characterPA;
+            echo($opponentHP);
+
+            if ($characterHP <= 0 || $opponentHP <= 0) {
+                
+            }
     	}
     }
 }

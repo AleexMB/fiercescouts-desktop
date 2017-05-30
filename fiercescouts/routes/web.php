@@ -23,3 +23,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/battle', 'BattleManager@battleStart')->name('battle');
+
+Route::get('/items/equipR/{id}', 'GameManager@equipItemR');
+Route::get('/items/equipL/{id}', 'GameManager@equipItemL');

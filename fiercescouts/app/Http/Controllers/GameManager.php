@@ -3,6 +3,9 @@
 namespace fiercescouts\Http\Controllers;
 
 use Illuminate\Http\Request;
+use fiercescouts\Character;
+use fiercescouts\Item;
+use Auth;
 
 class GameManager extends Controller
 {
@@ -170,4 +173,38 @@ class GameManager extends Controller
         }
     }
 
+    //METODI PER EQUIPPARE ITEM NEGLI SLOT
+    public function equipItemR($id){
+        $character = Character::all()->where('user_id', Auth::id())->first();
+
+        if ($character->weapon_left != $id) {
+            $character->weapon_right = $id;
+            $character->save();
+
+            return redirect("characters");
+        } else {
+            $character->weapon_left = null;
+            $character->weapon_right = $id;
+            $character->save();
+
+            return redirect("characters");
+        }
+    }
+
+    public function equipItemL($id){
+        $character = Character::all()->where('user_id', Auth::id())->first();
+
+        if ($character->weapon_right != $id) {
+            $character->weapon_left = $id;
+            $character->save();
+
+            return redirect("characters");
+        } else {
+            $character->weapon_right = null;
+            $character->weapon_left = $id;
+            $character->save();
+
+            return redirect("characters");
+        }
+    }
 }

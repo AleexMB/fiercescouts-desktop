@@ -62,7 +62,6 @@ class CharacterController extends Controller
         $character->p_defence = $classStats[3];
         $character->m_defence = $classStats[4];
 
-        //$character->weapon_right = ;
         $character->gender = $request->input('gender');
         $character->exp = 0;
         $character->gold = 0;

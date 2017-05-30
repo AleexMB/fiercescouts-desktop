@@ -1,22 +1,22 @@
 @extends("layouts.master")
 @section("content")
 
-<div class="createWrap jumbotron text-center">
+<!-- <div class="createWrap jumbotron text-center">
     <div class="container">
         <div>
             <h2>Crea un personaggio</h2>
         </div>
 
     </div>
-</div>
+</div> -->
 
-<!-- <div class="container">
+<div class="container">
 
-<h1>Create a Character</h1> -->
+<h1>Create a Character</h1>
 
                             <!-- if there are creation errors, they will show here -->
 
-<!-- {{ Form::open(array('url' => 'characters')) }}
+{{ Form::open(array('url' => 'characters')) }}
 
     <div class="form-group">
         {{ Form::label('name', 'Name') }}
@@ -35,5 +35,5 @@
     {{ Form::submit('Create the Character!', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
-</div> -->
+</div>
 @endsection
