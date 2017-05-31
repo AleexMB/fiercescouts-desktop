@@ -12,6 +12,6 @@ class CharactersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(fiercescouts\Character::class, 5)->create();
+        factory(fiercescouts\Character::class, 30)->create();
     }
 }

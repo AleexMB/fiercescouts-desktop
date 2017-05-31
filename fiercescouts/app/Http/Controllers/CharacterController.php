@@ -62,6 +62,24 @@ class CharacterController extends Controller
         $character->p_defence = $classStats[3];
         $character->m_defence = $classStats[4];
 
+        switch ($request->input('class')) {
+        	case "warrior":
+        		$character->skill = 1;
+        		break;
+        	case "mage":
+        		$character->skill = 2;
+        		break;
+        	case "assassin":
+        		$character->skill = 3;
+        		break;
+        	case "demon":
+        		$character->skill = 4;
+        		break;
+        	case "monk":
+        		$character->skill = 5;
+        		break;
+        }
+
         $character->gender = $request->input('gender');
         $character->exp = 0;
         $character->gold = 0;

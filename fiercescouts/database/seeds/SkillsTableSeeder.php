@@ -12,6 +12,43 @@ class SkillsTableSeeder extends Seeder
      */
     public function run()
     {
+        //STARTER SKILLS
+
+        DB::table('skills')->insert([
+            'name' => 'Hard strike',
+            'description' => '',
+            'unlocks_at' => 1,
+            'class' => 'warrior',
+        ]);
+
+        DB::table('skills')->insert([
+            'name' => 'Magic missle',
+            'description' => '',
+            'unlocks_at' => 1,
+            'class' => 'mage',
+        ]);
+
+        DB::table('skills')->insert([
+            'name' => 'Slit',
+            'description' => '',
+            'unlocks_at' => 1,
+            'class' => 'assassin',
+        ]);
+
+        DB::table('skills')->insert([
+            'name' => 'Bite',
+            'description' => '',
+            'unlocks_at' => 1,
+            'class' => 'demon',
+        ]);
+
+        DB::table('skills')->insert([
+            'name' => 'Smite',
+            'description' => '',
+            'unlocks_at' => 1,
+            'class' => 'monk',
+        ]);
+
         //WARRIOR SKILLS
 
         DB::table('skills')->insert([
