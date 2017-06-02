@@ -7,18 +7,23 @@
 
         <title>Fierce Scouts</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="/css/base.css">
 
-        <!-- Styles -->
         <style>
+
+        @font-face{
+            font-family: maisonneuebook;
+            src: url("../../fonts/maisonneuebook.ttf");
+        }
+
             html, body {
-                background-color: #fff;
+                background-color: #21282E
                 color: #636b6f;
-                font-family:'Poppins',sans-serif;
+                font-family:'maisonneuebook',sans-serif;
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
+                overflow: hidden;
             }
 
             .full-height {
@@ -55,7 +60,7 @@
                 color: #fff;
                 padding: 0 25px;
                 font-size: 12px;
-                font-weight: 600;
+                font-family: 'maisonneuebook', sans-serif;
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
@@ -66,7 +71,12 @@
             }
             .bg{
               height: 100vh;
-              background: url("https://cdna.artstation.com/p/assets/images/images/002/492/670/large/eduardo-quesada-background.jpg?1462389712") no-repeat center;
+              color: #21282E;
+              background: #21282E;
+              background: linear-gradient(-90deg,  #21282E, #32373C);
+              background: -webkit-linear-gradient(-90deg, #21282E, #32373C); /* For Safari 5.1 to 6.0 */
+              background: -o-linear-gradient(-90deg, #21282E, #32373C); /* For Opera 11.1 to 12.0 */
+              background: -moz-linear-gradient(-90deg, #21282E, #32373C); /* For Firefox 3.6 to 15 */
             }
         </style>
     </head>
@@ -83,16 +93,10 @@
                     @endif
                 </div>
             @endif
-
             <div class="content">
-                <div class="title m-b-md">
-                    Fierce <br> Scouts
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">FACEBOOK</a>
-                    <a href="https://laravel.com/docs">BEHANCE</a>
-                </div>
+              <div class="title m-b-md">
+                Fierce <br> Scouts
+              </div>
             </div>
         </div>
       </div>

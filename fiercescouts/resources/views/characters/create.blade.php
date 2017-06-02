@@ -1,22 +1,84 @@
-@extends("layouts.master")
-@section("content")
+@extends("layouts.base")
+@section("create")
 
-<!-- <div class="createWrap jumbotron text-center">
-    <div class="container">
-        <div>
-            <h2>Crea un personaggio</h2>
+
+</body>
+  <div class="container-fluid nopaddingleft nopaddingright">
+    <div class="col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10">
+      <div class="chooseCharacterTitle text-center">
+        <p>WELCOME FIERCESCOUT!<br>
+CHOOSE YOUR CHARACTER AND START THE ADVENTURE</p>
+      </div>
+      <div class="buttonsGender text-center">
+        <button onclick="selectedGender()" id="male" type="button" name="button ">MALE</button>
+        <button onclick="selectedGender()" id="female" type="button" name="button">FEMALE</button>
+      </div>
+      <div class="row containerCharacter text-center">
+        <div class=" chooseCharacter text-center">
+            <div class="figure nopaddingleft nopaddingright " id"monk">
+              <div class="figureTitle">
+                MONK
+              </div>
+              <div class="figureImage" id="monkImage">
+              </div>
+              <div class="figureVal">
+                ATT:...  DEF:...
+              </div>
+            </div>
+            <div class="figure nopaddingleft nopaddingright " id="wizard">
+              <div class="figureTitle">
+                WIZARD
+              </div>
+              <div class="figureImage" id="wizardImage">
+              </div>
+              <div class="figureVal">
+                ATT:...  DEF:...
+              </div>
+            </div>
+            <div class="figure nopaddingleft nopaddingright " id="warrior">
+              <div class="figureTitle">
+                WARRIOR
+              </div>
+              <div class="figureImage" id="warriorImage">
+              </div>
+              <div class="figureVal">
+                ATT:...  DEF:...
+              </div>
+            </div>
+            <div class="figure nopaddingleft nopaddingright " id="demon">
+              <div class="figureTitle">
+                DEMON
+              </div>
+              <div class="figureImage" id="demonImage">
+              </div>
+              <div class="figureVal">
+                ATT:...  DEF:...
+              </div>
+            </div>
+            <div class="figure nopaddingleft nopaddingright " id="assassin">
+              <div class="figureTitle">
+                ASSASSIN
+              </div>
+              <div class="figureImage text-center" id="assassinImage">
+              </div>
+              <div class="figureVal">
+                ATT:...  DEF:...
+              </div>
+            </div>
         </div>
+      </div>
+      <div class="confirm text-center">
+        <button class="confirmBtn centered" type="button" name="button">CONFIRM</button>
+      </div>
+      </div>
+  </div>
+  <script src="{{ asset('js/jquery-2.2.0.min.js') }}"></script>
+</body>
+  <!--<h1>Create a Character</h1>
 
-    </div>
-</div> -->
+if there are creation errors, they will show here -->
 
-<div class="container">
-
-<h1>Create a Character</h1>
-
-                            <!-- if there are creation errors, they will show here -->
-
-{{ Form::open(array('url' => 'characters')) }}
+  <!-- {{ Form::open(array('url' => 'characters')) }}
 
     <div class="form-group">
         {{ Form::label('name', 'Name') }}
@@ -37,3 +99,15 @@
 {{ Form::close() }}
 </div>
 @endsection
+
+
+
+<!-- <div class="createWrap jumbotron text-center">
+    <div class="container">
+        <div>
+            <h2>Crea un personaggio</h2>
+        </div>
+
+    </div>
+</div> -->
+  <!--

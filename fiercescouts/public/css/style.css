@@ -1,3 +1,469 @@
+
+
+@font-face{
+    font-family: trump_gothic_west;
+    src: url("../../fonts/trump_gothic_west.ttf");
+}
+
+@font-face{
+    font-family: trump_gothic_west;
+    src: url("../../fonts/trump_gothic_west.ttf");
+}
+
+@font-face{
+    font-family: maisonneuebook;
+    src: url("../../fonts/maisonneuebook.ttf");
+}
+
+@font-face{
+    font-family: Breathe Fire;
+    src: url("../../fonts/Breathe Fire.otf");
+}
+
+@font-face{
+    font-family: Breathe Fire;
+    src: url("../../fonts/Breathe Fire.otf");
+}
+
+body{
+	font-family: 'maisonneuebook' !important;
+	color: #21282E !important;
+	background-color: #21282E;
+	overflow: hidden;
+}
+
+	/*welcome page*/
+
+.bg{
+  height: 100vh;
+  color: #21282E;
+  background: #21282E;
+  background: linear-gradient(-90deg,  #21282E, #32373C);
+  background: -webkit-linear-gradient(-90deg, #21282E, #32373C); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(-90deg, #21282E, #32373C); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(-90deg, #21282E, #32373C); /* For Firefox 3.6 to 15 */
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.content {
+    text-align: center;
+}
+
+.title {
+    font-size: 84px;
+    font-family: 'Breathe Fire';
+    color: #fff;
+}
+
+.links > a {
+    color: #fff;
+    padding: 0 25px;
+    font-size: 12px;
+    font-family: 'maisonneuebook', sans-serif;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.m-b-md {
+    margin-bottom: 30px;
+}
+
+
+.nopaddingleft{
+  padding-left: 0 !important;
+}
+
+.nopaddingright{
+  padding-right: 0 !important;
+}
+
+#panelHome{
+  margin-top: 20vh;
+}
+
+#tableLadders{
+  margin-top: 20vh;
+}
+
+#tableProfile{
+  margin-top: 20vh;
+}
+
+/* navbar general */
+
+.navbarContainer{
+	background-color: #21282E;
+	height: 100px;
+}
+
+
+.leftAreaNavbar{
+	float: left;
+}
+
+.centerAreaNavbar{
+	text-align: center;
+	width: 40vw;
+	position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+	margin-top: 5vh;
+	height: auto;
+
+}
+
+.rightAreaNavbar{
+	float: right;
+	display: inline-block;
+	margin: auto;
+	height: auto;
+}
+
+
+.items{
+	padding-right: 3vw;
+	color: #fff;
+	font-size: 18pt;
+	font-family: 'trump_gothic_west';
+	opacity: 0.8;
+}
+
+.items:hover{
+	opacity: 1;
+  color: #fff;
+  text-decoration: none;
+}
+
+.battleMode{
+	width: 80px;
+	height: 80px;
+	border-radius: 100px;
+	background-image: url("../../images/fierce.svg");
+	background-position: center;
+	background-size: cover;
+	border: none;
+	background-repeat: no-repeat;
+	background-color: #4AC8FF;
+	margin:auto;
+	position:relative;
+	box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+.profile{
+	padding-left: 3vw;
+	color: #fff;
+	font-size: 18pt;
+	font-family: 'trump_gothic_west';
+	opacity: 0.8;
+}
+
+.profile:hover {
+	opacity: 1;
+	color: #fff;
+  text-decoration: none;
+}
+
+.userImage{
+	width: 20px;
+	height: 20px !important;
+	border-radius: 100px;
+	background-color: #fff;
+	z-index: 10;
+	float: left;
+	display: inline-block;
+	margin-top: 45px;
+	margin-right: 15px;
+}
+
+.userName{
+	float: left;
+	color: #fff;
+	font-family: sans-serif;
+	margin-top: 30px;
+	line-height: 20px;
+	padding-right: 15px;
+	padding-top: 15px;
+	font-size: 9pt;
+	font-family: 'maisonneuebook';
+}
+
+.logout{
+	float: right;
+	color: #fff !important;
+	font-family: 'maisonneuebook';
+	margin-top: 30px;
+	line-height: 20px;
+	font-size: 9pt;
+	padding-top: 15px;
+  opacity: 0.7;
+}
+
+.logout:hover{
+  text-decoration: none;
+  opacity: 1;
+}
+
+.col-md-4 control-label{
+	font-family: 'trump_gothic_west';
+}
+
+
+.registerForm {
+	width: 550px;
+	height: 380px;
+	margin: auto;
+	align-items: center;
+}
+
+.form-horizontal{
+	margin-top: 45px;
+}
+
+.navbar-brand{
+	margin-top: 30px;
+	font-family: 'Breathe Fire';
+	font-size: 16pt;
+	color: #fff;
+	float: left;
+  transition-duration: 0.3s;
+ transition-property: transform;
+}
+
+.navbar-brand:hover{
+	transform: scale(1.1);
+  color: #fff;
+}
+
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-text{
+	color: #fff;
+}
+
+.navbar-default .navbar-brand{
+	color: #fff;
+}
+
+.navbar-right{
+	margin-top: 30px;
+	font-family: 'trump_gothic_west';
+	color: #fff;
+}
+
+.chooseCharacterTitle{
+	margin-top: 8vh;
+	font-family: 'trump_gothic_west';
+	color: #fff;
+	font-size: 26pt;
+}
+
+.buttonsGender{
+	margin-top: 4vh;
+}
+
+#male{
+	width:150px;
+	height: 40px;
+	background-color: transparent;
+	border: 2px solid #fff;
+	color: #fff;
+	margin-right:5px;
+}
+
+#male:hover{
+	/*padding: 12px 32px;*/
+	background-color: #4AC8FF;
+	border: 2px solid #4AC8FF;
+	color: #fff;
+}
+
+#male:active{
+	/*padding: 12px 32px;*/
+	background-color: #4AC8FF;
+	border: 2px solid #4AC8FF;
+	color: #fff;
+}
+
+#female{
+	/*padding: 12px 32px;*/
+	width:150px;
+	height: 40px;
+	background-color: transparent;
+	border: 2px solid #fff;
+	color: #fff;
+	margin-left:5px;
+}
+
+#female:hover{
+	/*padding: 12px 32px;*/
+	background-color: #FF8497;
+	border: 2px solid #FF8497;
+	color: #fff;
+}
+
+.containerCharacter{
+  text-align: center;
+}
+
+.chooseCharacter{
+	margin-top: 4vh;
+  text-align: center;
+  height: 270px;
+}
+
+
+.figure{
+	height: 270px;
+  width: 200px;
+	background-color: #fff;
+  border: 5px solid #fff;
+  border-radius: 2px;
+  margin: 10px;
+  text-align: center;
+  transition-duration: 0.3s;
+  transition-property: transform;
+  display: inline-block;
+}
+
+.figure:hover{
+  box-shadow:5px 5px 60px 5px rgba(0, 0, 3, .9);
+  transform: scale(1.1);
+}
+
+.figure:active{
+  border: solid 5px #4FCC53;
+}
+
+.figureTitle{
+  padding-top: 10px;
+  font-family: 'trump_gothic_west',sans-serif;
+  color:#21282E;
+  font-size: 16pt;
+}
+
+.figureImage{
+  height: 150px;
+  width: 150px;
+  background-color: transparent;
+  text-align: center;
+  padding-top: 10px;
+  margin: auto;
+}
+
+.figureVal{
+  padding-top: 15px;
+  font-family: 'trump_gothic_west',sans-serif;
+  color:#21282E;
+  font-size: 14pt;
+}
+
+#monkImage{
+  background-image: url("../../images/characters/male_monk.png");
+  background-size: cover;
+  background-position: center;
+}
+
+#wizardImage{
+  background-image: url("../../images/characters/male_mage.png");
+  background-size: cover;
+  background-position: center;
+}
+
+#warriorImage{
+  background-image: url("../../images/characters/male_warrior.png");
+  background-size: cover;
+  background-position: center;
+}
+
+#demonImage{
+  background-image: url("../../images/characters/male_demon.png");
+  background-size: cover;
+  background-position: center;
+}
+
+#assassinImage{
+  background-image: url("../../images/characters/male_assassin.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.confirmBtn{
+  width:150px;
+  height: 40px;
+  background-color: #4AC8FF;
+  color: #fff;
+  margin-right:5px;
+  text-align: center;
+  border: none;
+  border-radius: 2px;
+  font-family: 'trump_gothic_west';
+  font-size: 16pt;
+  margin-top: 5vh;
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+
+.confirmBtn:hover{
+  transform: scale(1.1);
+}
+
+.form-group{
+	padding: 3px;
+}
+
+.form-control{
+	border: none;
+	box-shadow:2px 2px 20px 2px rgba(0, 0, 3, .08);
+  background: white;
+}
+
+.form-control::after {
+    z-index: -1; /* hide shadow behind image */
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+    height: 100px;
+    bottom: 0;
+}
+
+#navbarx{
+	background: transparent;
+	border: none;
+	height: 200px;
+}
+
+.navbarHeight{
+	height: 200px;
+}
+
+.logoArea{
+	width: 25px;
+	height: 35px;
+	background-image:url("../../images/flame.png");
+  background-position: center;
+	background-size: 70px;
+	display: inline-block;
+	float: left;
+	margin-right: 10px;
+	margin-top: 30px;
+}
+
 .registerBox {
 	background-color: #21282e;
 	width: 100%;
@@ -12,8 +478,8 @@
 	margin-bottom: 25vh;
 }
 
-.registerForm {
-	width: 550px;
-	height: 380px;
-	margin: auto;
+.submitBtn{
+	background-color: #4AC8FF;
+	border: none;
+	border-radius: 2px;
 }

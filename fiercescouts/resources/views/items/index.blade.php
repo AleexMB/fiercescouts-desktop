@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section("content")
+@extends("layouts.base")
+@section("create")
 
 <table class="table table-striped table-bordered">
     <thead>
@@ -14,7 +14,7 @@
             <td>{{ $value->id }}</td>
             <td>{{ $value->name }}</td>
             <td>
-                
+
                 <a class="btn btn-small btn-success" href="{{ URL::to('items/equipR/' . $value->id) }}">Equip Item to R</a>
                 <a class="btn btn-small btn-success" href="{{ URL::to('items/equipL/' . $value->id) }}">Equip Item to L</a>
             </td>

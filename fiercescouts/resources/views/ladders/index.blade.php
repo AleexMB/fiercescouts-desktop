@@ -1,7 +1,7 @@
-@extends('layouts.app')
-@section("content")
+@extends("layouts.base")
+@section("create")
 
-<table class="table table-striped table-bordered">
+<table class="table table-striped table-bordered" id="tableLadders">
     <thead>
         <tr>
             <td>ID</td>
