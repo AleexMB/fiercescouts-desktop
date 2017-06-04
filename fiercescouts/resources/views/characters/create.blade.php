@@ -67,10 +67,13 @@ CHOOSE YOUR CHARACTER AND START THE ADVENTURE</p>
             </div>
         </div>
       </div>
-      <div class="confirm text-center">
-        <button class="confirmBtn centered" type="button" name="button">CONFIRM</button>
+      <div class="row">
+        <div class="confirm text-center">
+          <button class="confirmBtn centered" type="button" name="button">CONFIRM</button>
+        </div>
+        </div>
       </div>
-      </div>
+    </div>
   </div>
   <script src="{{ asset('js/jquery-2.2.0.min.js') }}"></script>
 </body>

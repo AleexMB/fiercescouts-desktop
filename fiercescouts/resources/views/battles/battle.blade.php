@@ -1,71 +1,17 @@
-@extends('layouts.app')
-@section("content")
+@extends("layouts.base")
+@section("create")
 
-<table class="table table-striped table-bordered">
-    <thead>
-        <tr>
-            <td>ID</td>
-            <td>Name</td>
-            <td>Class</td>
-            <td>Gender</td>
-            <td>Level</td>
-            <td>Exp</td>
-            <td>HP</td>
-            <td>P ATK</td>
-            <td>M ATK</td>
-            <td>P DEF</td>
-            <td>M DEF</td>
-        </tr>
-    </thead>
-    <tbody>
-    @foreach($character as $key => $value)
-        <tr>
-            <td>{{ $value->id }}</td>
-            <td>{{ $value->name }}</td>
-            <td>{{ $value->class }}</td>
-            @if ($value->gender == "M")
-                <td><img src="{{URL::asset('/images/male.png')}}" alt="male icon" height="15" width="15"></td>
-            @else
-                <td><img src="{{URL::asset('/images/female.png')}}" alt="male icon" height="15" width="15"></td>
-            @endif
-            <td>{{ $value->level }}</td>
-            <td>{{ $value->exp }}</td>
-            <td>{{ $value->hp }}</td>
-            <td>{{ $value->p_attack }}</td>
-            <td>{{ $value->m_attack }}</td>
-            <td>{{ $value->p_defence }}</td>
-            <td>{{ $value->m_defence }}</td>
-
-            <td>
-            </td>
-        </tr>
-    @endforeach
-    </tbody>
-    @foreach($opponent as $key => $value)
-        <tr>
-            <td>{{ $value->id }}</td>
-            <td>{{ $value->name }}</td>
-            <td>{{ $value->class }}</td>
-            @if ($value->gender == "M")
-                <td><img src="{{URL::asset('/images/male.png')}}" alt="male icon" height="15" width="15"></td>
-            @else
-                <td><img src="{{URL::asset('/images/female.png')}}" alt="male icon" height="15" width="15"></td>
-            @endif
-            <td>{{ $value->level }}</td>
-            <td>{{ $value->exp }}</td>
-            <td>{{ $value->hp }}</td>
-            <td>{{ $value->p_attack }}</td>
-            <td>{{ $value->m_attack }}</td>
-            <td>{{ $value->p_defence }}</td>
-            <td>{{ $value->m_defence }}</td>
-
-            <td>
-
-                
-
-            </td>
-        </tr>
-    @endforeach
-    </tbody>
-</table>
-@endsection
+<body>
+  <div class="container-fluid">
+    <div class="col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10">
+      <div class="row">
+        <div class="col-md-3 col-lg-3 firstCharacter">
+        </div>
+        <div class="col-md-offset-1 col-md-4 display">
+        </div>
+        <div class="col-md-offset-1 col-md-3 col-lg-offset-1 col-lg-3 secondCharacter">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

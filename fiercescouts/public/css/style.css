@@ -332,7 +332,7 @@ body{
 
 .figure{
 	height: 270px;
-  width: 200px;
+  width: 180px;
 	background-color: #fff;
   border: 5px solid #fff;
   border-radius: 2px;
@@ -482,4 +482,255 @@ body{
 	background-color: #4AC8FF;
 	border: none;
 	border-radius: 2px;
+}
+
+
+	/*battle*/
+  .display{
+    background-color: #282E34;
+    height: 40vh;
+    margin-top: 8vh;
+    border-radius: 2px;
+  }
+
+  .display:hover{
+    background-color: #282E34;
+    height: 40vh;
+    margin-top: 8vh;
+  }
+
+  .firstCharacter{
+    background-color: #21282E;
+    height: 100vh;
+    margin-top: 8vh;
+  }
+
+  .secondCharacter{
+    background-color: #21282E;
+    height: 100vh;
+    margin-top: 10vh;
+  }
+
+  .titleBattle {
+    color:#fff;
+    margin-top: 50vh;
+    font-family: 'trump_gothic_west';
+    font-size: 40pt;
+  }
+
+  .userNameBattle{
+    font-family: 'trump_gothic_west';
+    color:#fff;
+    font-size: 18pt;
+    margin-top: 0;
+  }
+
+  .levelUser{
+    color:#fff;
+    font-family: 'maisonneuebook';
+    font-size: 9pt;
+  }
+
+  #userOneImage{
+    background-image: url("../../images/characters/male_monk.png");
+    background-size: 80%;
+    background-position: center;
+      background-repeat: no-repeat;
+    height: 30vh;
+    z-index: 2;
+    position: relative;
+  }
+
+  #userTwoImage{
+    background-image: url("../../images/characters/female_assassin.png");
+    background-size: 80%;
+    background-position: center;
+      background-repeat: no-repeat;
+    height: 30vh;
+    z-index: 2;
+    position: relative;
+  }
+
+  .containerSkills{
+    height: 100vh;
+    background-color: #282E34;
+    margin-top: -15vh;
+    z-index: 1;
+  }
+
+  .containerSkills h1{
+    color:#fff;
+    font-family: 'trump_gothic_west';
+    font-size: 16pt;
+    padding-top: 15vh;
+  }
+
+  .HP{
+    height: 1vh;
+    border-radius: 4px;
+    background-color: #353D45;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+
+  }
+
+  #lifePointsUserOne{
+    height: 1vh;
+    border-radius: 4px;
+    background-color: #4FCC53;
+    width: 80%;
+  }
+
+
+  #lifePointsUserTwo{
+    height: 1vh;
+    border-radius: 4px;
+    background-color: #4FCC53;
+    width: 60%;
+  }
+
+  .hpUser{
+    color: #fff;
+    font-family: 'maisonneuebook';
+    font-size: 8pt;
+    padding-top: 1vh;
+    opacity: 0.7;
+  }
+
+
+.atkContainer{
+  background-color: #353D45;
+  width: 80%;
+  height: 12vh;
+  text-align: center;
+  border-radius: 2px;
+  margin: auto;
+  margin-top: 4vh;
+}
+
+.atk{
+  float: left;
+  text-align: left;
+  font-size: 7pt;
+  font-family: 'maisonneuebook';
+  color: #fff;
+  padding-left: 2vw;
+  padding-top: 25px;
+  opacity: 0.8;
+
+
+}
+
+.def{
+  float: right;
+  text-align: left;
+  font-size: 7pt;
+  color: #fff;
+  display: inline-block;
+  font-family: 'maisonneuebook';
+  margin: auto;
+  padding-right: 2vw;
+  padding-top: 25px;
+  opacity: 0.8;
+}
+
+.skillsContainer{
+  margin-top: 4vh;
+  display: inline-block;
+  text-align: center;
+  width: 80%;
+
+}
+
+.potions{
+  height: 40px;
+  width: 40px;
+  border-radius: 120px;
+  background-color: #353D45;
+  display: inline-block;
+  margin: 5px;
+}
+
+.potions:hover{
+  height: 40px;
+  width: 40px;
+  border-radius: 120px;
+  background-color: #353D45;
+  display: inline-block;
+  margin: 5px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+
+}
+
+.weaponLeft{
+  height: 40px;
+  width: 40px;
+  border-radius: 120px;
+  background-color: #353D45;
+  display: inline-block;
+  margin: 5px;
+}
+
+.weaponLeft:hover{
+  height: 40px;
+  width: 40px;
+  border-radius: 120px;
+  background-color: #353D45;
+  display: inline-block;
+  margin: 5px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.weaponRight{
+  height: 40px;
+  width: 40px;
+  border-radius: 120px;
+  background-color: #353D45;
+  display: inline-block;
+  margin: 5px;
+}
+
+.weaponRight:hover{
+  height: 40px;
+  width: 40px;
+  border-radius: 120px;
+  background-color: #353D45;
+  display: inline-block;
+  margin: 5px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skill{
+  height: 40px;
+  width: 40px;
+  border-radius: 120px;
+  background-color: #353D45;
+  display: inline-block;
+  margin: 5px;
+}
+
+.skill:hover{
+  height: 40px;
+  width: 40px;
+  border-radius: 120px;
+  background-color: #353D45;
+  display: inline-block;
+  margin: 5px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+#potionUserOne{
+  background-image: url("../../images/itm12-13-11.png");
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+}
+
+#potionUserTwo{
+  background-image: url("../../images/itm12-13-11.png");
+  background-position: center;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  opacity: 0.5;
 }
