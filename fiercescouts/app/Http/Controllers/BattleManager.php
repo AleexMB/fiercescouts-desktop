@@ -32,12 +32,16 @@ class BattleManager extends Controller
         $opponentID = $opponent['attributes']['id'];
         //dd($opponent['attributes']['id']);
 
-        BattleManager::battleResolve($characterID, $opponentID);
+        $jsonData = BattleManager::battleResolve($characterID, $opponentID);
         //return Redirect::to('/home');
 
-    	// return view("battles.battle")
-	    // 	->with('character', $character)
-	    // 	->with('opponent', $opponent);
+        $characterToPass = Character::where('id', $characterID)->firstOrFail();
+        $opponentToPass = Character::where('id', $opponentID)->firstOrFail();
+
+    	return view("battles.battle")
+            ->with('jsonData', $jsonData)
+	     	->with('character', $characterToPass)
+	    	->with('opponent', $opponentToPass);
     }
 
     public function battleResolve($characterID, $opponentID) {
@@ -111,11 +115,27 @@ class BattleManager extends Controller
             if ($turn % 2 != 0) {
         		$opponentHP -= ($characterPA) - ($opponentPD);
 
-                $characterRecord = $character->name . " attacked with weapons and did " . ($characterPA - $opponentPD) . " damage to " . $opponent->name . ". " . $opponent->name . " has " . $opponentHP . " HP left.";
+                $characterRecord = array("desc" => $character->name . " attacked with weapons and did " . ($characterPA - $opponentPD) . " damage to " . $opponent->name . ". " . $opponent->name . " has " . $opponentHP . " HP left.",
+                    "offender" => $character->id,
+                    "defender" => $opponent->id,
+                    "offenderHP" => $characterHP,
+                    "defenderHP" => $opponentHP,
+                    "offenderPA" => $characterPA,
+                    "defenderPA" => $opponentPA,
+                    "offenderMA" => $characterMA,
+                    "defenderMA" => $opponentMA,
+                    );
 
                 $characterHP -= ($opponentPA) - ($characterPD);
 
-                $opponentRecord = $opponent->name . " attacked with weapons and did " . ($opponentPA - $characterPD) . " damage to " . $character->name . ". " . $character->name . " has " . $characterHP . " HP left.";
+                $opponentRecord = array("desc" => $opponent->name . " attacked with weapons and did " . ($opponentPA - $characterPD) . " damage to " . $character->name . ". " . $character->name . " has " . $characterHP . " HP left.",
+                    "offender" => $opponent->id,
+                    "defender" => $character->id,
+                    "offenderHP" => $opponentHP,
+                    "defenderHP" => $characterHP,
+
+                    );
+                
             } else {
 
                 //PERSONAGGIO USA SKILL
@@ -242,8 +262,10 @@ class BattleManager extends Controller
                 $battleRecords[] = $opponentRecord;
             }
     	}
-        foreach($battleRecords as $battleRecord) {
-            echo $battleRecord, '<br>';
-        }
+        // foreach($battleRecords as $battleRecord) {
+        //     echo $battleRecord, '<br>';
+        // }
+        return json_encode($battleRecords);
+        //dd(response()->json($battleRecords));
     }
 }

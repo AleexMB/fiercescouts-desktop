@@ -15,7 +15,7 @@ class CreateItemForeignkeys extends Migration
     {
         Schema::table('items', function (Blueprint $table) {
             $table->integer('character_id')->unsigned();
-            $table->foreign('character_id')->references('id')->on('characters');
+            $table->foreign('character_id')->references('id')->on('characters')->onDelete('cascade');
         });
     }
 

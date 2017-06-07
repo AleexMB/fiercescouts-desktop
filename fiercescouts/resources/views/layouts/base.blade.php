@@ -7,12 +7,12 @@
 
     <!-- CSRF Token -->
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Fiercescouts') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="/css/hover-min.css.css">
+    <link rel="stylesheet" href="/css/hover-min.css">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
 
@@ -37,10 +37,10 @@
         </div>
         <div class="rightAreaNavbar">
           <div class="userImage"></div>
-          <p class="userName">Username</p>
+          <p class="userName">{{ Auth::user()->name }}</p>
           <a class="logout" href="{{ route('logout') }}"
               onclick="event.preventDefault();
-                       document.getElementById('logouts').submit();">
+                       document.getElementById('logout').submit();">
               LOGOUT
           </a>
           <form  id="logout" class="logout" action="{{ route('logout') }}" method="POST">

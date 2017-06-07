@@ -295,11 +295,18 @@ body{
 	color: #fff;
 }
 
-#male:active{
-	/*padding: 12px 32px;*/
+#male:focus{
+	
+  outline: none;
 	background-color: #4AC8FF;
 	border: 2px solid #4AC8FF;
 	color: #fff;
+}
+
+#male.selected {
+  background-color: #4AC8FF;
+  border: 2px solid #4AC8FF;
+  color: #fff;
 }
 
 #female{
@@ -317,6 +324,20 @@ body{
 	background-color: #FF8497;
 	border: 2px solid #FF8497;
 	color: #fff;
+}
+
+#female:focus{
+  /*padding: 12px 32px;*/
+  outline: none;
+  background-color: #FF8497;
+  border: 2px solid #FF8497;
+  color: #fff;
+}
+
+#female.selected {
+  background-color: #FF8497;
+  border: 2px solid #FF8497;
+  color: #fff;
 }
 
 .containerCharacter{
@@ -733,4 +754,8 @@ body{
   background-size: 80%;
   background-repeat: no-repeat;
   opacity: 0.5;
+}
+
+.radioInvis {
+  display:none;
 }

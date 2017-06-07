@@ -23,7 +23,7 @@ class GameManager extends Controller
 				$hp = rand(140, 166);
 				$p_attack = rand(10, 14);
 				$m_attack = rand(2, 6);
-				$p_defence = rand(8, 12);
+				$p_defence = rand(5, 8);
 				$m_defence = rand(6, 10);
 				break;
 			case "mage":
@@ -51,7 +51,7 @@ class GameManager extends Controller
                 $hp = rand(82, 100);
                 $p_attack = rand(8, 12);
                 $m_attack = rand(11, 15);
-                $p_defence = rand(12, 16);
+                $p_defence = rand(5, 7);
                 $m_defence = rand(4, 8);
                 break;
 		}

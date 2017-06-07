@@ -26,7 +26,9 @@ class ItemController extends Controller
 		//$items = Item::all()->where('character_id')belongsTo(Auth::Id());
 		$character = Character::all()->where('user_id', Auth::id())->first();
 		$items = Item::all()->where('character_id', $character->id);
+		
         return view("items.index")->with('items', $items);
+
 	}
 
 	/**
@@ -59,19 +61,23 @@ class ItemController extends Controller
 
 				$character = Character::all()->where('user_id', Auth::id())->first();
 
-				$stats = GameManager::assignItemStats($character->level, $item->rarity);
+				if ($character) {
+					$stats = GameManager::assignItemStats($character->level, $item->rarity);
 
-				$item->hp = $stats[0];
-				$item->p_attack = $stats[1];
-				$item->m_attack = $stats[2];
-				$item->p_defence = $stats[3];
-				$item->m_defence = $stats[4];
-				$item->itemlv = $stats[5];
-				
-				$item->character_id = DB::table('characters')->where('user_id', Auth::id())->value('id');
+					$item->hp = $stats[0];
+					$item->p_attack = $stats[1];
+					$item->m_attack = $stats[2];
+					$item->p_defence = $stats[3];
+					$item->m_defence = $stats[4];
+					$item->itemlv = $stats[5];
+					
+					$item->character_id = DB::table('characters')->where('user_id', Auth::id())->value('id');
 
-				$item->save();
-				return redirect('items');
+					$item->save();
+					return redirect('items');
+				} else {
+					return redirect('home');
+				}
 			} else {
 				return redirect('home');
 			}
