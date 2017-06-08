@@ -27,14 +27,15 @@ CHOOSE YOUR CHARACTER AND START THE ADVENTURE</p>
 
 	  <div class="row containerCharacter text-center">
 		<div class=" chooseCharacter text-center">
-			<div class="figure nopaddingleft nopaddingright " id"monk">
+			<div class="figure nopaddingleft nopaddingright " id="monk">
 			  <div class="figureTitle">
 				MONK
 			  </div>
 			  <div class="figureImage" id="monkImage">
 			  </div>
 			  <div class="figureVal">
-				ATT:...  DEF:...
+				BALANCED STATS
+				<input type='radio' name='class' class='radioInvis' value='monk' id='radioMonk'/>
 			  </div>
 			</div>
 			<div class="figure nopaddingleft nopaddingright " id="wizard">
@@ -44,7 +45,8 @@ CHOOSE YOUR CHARACTER AND START THE ADVENTURE</p>
 			  <div class="figureImage" id="wizardImage">
 			  </div>
 			  <div class="figureVal">
-				ATT:...  DEF:...
+				HIGH MATK / HIGH MDEF
+				<input type='radio' name='class' class='radioInvis' value='mage' id='radioMage'/>
 			  </div>
 			</div>
 			<div class="figure nopaddingleft nopaddingright " id="warrior">
@@ -54,8 +56,8 @@ CHOOSE YOUR CHARACTER AND START THE ADVENTURE</p>
 			  <div class="figureImage" id="warriorImage">
 			  </div>
 			  <div class="figureVal">
-				ATT:...  DEF:...
-				{{ Form::radio('class', 'warrior') }}
+				HIGH HP / HIGH PATK
+				<input type='radio' name='class' class='radioInvis' value='warrior' id='radioWarrior'/>
 			  </div>
 			</div>
 			<div class="figure nopaddingleft nopaddingright " id="demon">
@@ -65,7 +67,8 @@ CHOOSE YOUR CHARACTER AND START THE ADVENTURE</p>
 			  <div class="figureImage" id="demonImage">
 			  </div>
 			  <div class="figureVal">
-				ATT:...  DEF:...
+				VERY HIGH ATK / VERY LOW DEF
+				<input type='radio' name='class' class='radioInvis' value='demon' id='radioDemon'/>
 			  </div>
 			</div>
 			<div class="figure nopaddingleft nopaddingright " id="assassin">
@@ -75,7 +78,8 @@ CHOOSE YOUR CHARACTER AND START THE ADVENTURE</p>
 			  <div class="figureImage text-center" id="assassinImage">
 			  </div>
 			  <div class="figureVal">
-				ATT:...  DEF:...
+				VERY HIGH PATK / VERY LOW HP
+				<input type='radio' name='class' class='radioInvis' value='assassin' id='radioAssassin'/>
 			  </div>
 			</div>
 		</div>

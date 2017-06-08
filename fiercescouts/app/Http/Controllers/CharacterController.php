@@ -86,6 +86,8 @@ class CharacterController extends Controller
         $character->victory_points = 0;
         $character->chests = 0;
         $character->chests_limit = 5;
+        $character->battle_won = 0;
+        $character->battle_lost = 0;
         $character->user_id = Auth::id();
         $character->save();
 

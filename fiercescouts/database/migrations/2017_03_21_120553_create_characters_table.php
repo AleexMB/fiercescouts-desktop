@@ -34,6 +34,8 @@ class CreateCharactersTable extends Migration
             $table->integer("victory_points")->nullable();
             $table->integer("chests")->nullable();
             $table->integer("chests_limit")->nullable();
+            $table->integer("battle_won")->nullable();
+            $table->integer("battle_lost")->nullable();
         });
     }
 

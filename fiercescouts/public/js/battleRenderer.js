@@ -2,17 +2,43 @@ $(function() {
 
 	console.log(battleData);
 	
-	for (var i = 0; i < battleData.length; i++) {
+	// for (var i = 0; i < battleData.length; i++) {
+	// 	var targetUserId = battleData[i].offender;
+	// 	var targetUserHP = battleData[i].offenderHP;
+
+	// 	var turnDescription = battleData[i].desc;
+
+	// 	// COMBAT LOG
+	// 	//$("#logBox").append("<div>" + turnDescription + "</div");
+
+	// 	updateHPBar(targetUserId, targetUserHP);
+
+	// }
+
+	var i = 0;
+
+	function manageTurn() {
 		var targetUserId = battleData[i].offender;
 		var targetUserHP = battleData[i].offenderHP;
+		var targetOpponentId = battleData[i].defender;
+		var targetOpponentHP = battleData[i].defenderHP;
 
 		var turnDescription = battleData[i].desc;
 
-		$("#logBox").append("<div>" + turnDescription + "</div");
-
+		// COMBAT LOG
+		//$("#logBox").append("<div>" + turnDescription + "</div");
+		
 		updateHPBar(targetUserId, targetUserHP);
+		updateHPBar(targetOpponentId, targetOpponentHP);
+		// updateHPText(targetUserId, targetOpponentHP);
 
+		if (i < battleData.length){
+			i++;
+			setTimeout(manageTurn, 1000);
+		}
 	}
+
+	manageTurn();
 	
 });
 
@@ -25,5 +51,10 @@ function updateHPBar (userId, hp) {
 	var newWidth = (hp / maxHP) * parW;
 
 	bar.width(newWidth);
-
 }
+
+// function updateHPText (userId, hpText){
+// 	var span = $("[data-uid=" + userId + "]");
+// 	span.text(hpText);
+// }
+

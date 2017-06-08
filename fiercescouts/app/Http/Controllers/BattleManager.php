@@ -124,6 +124,10 @@ class BattleManager extends Controller
                     "defenderPA" => $opponentPA,
                     "offenderMA" => $characterMA,
                     "defenderMA" => $opponentMA,
+                    "offenderPD" => $characterPD,
+                    "defenderPD" => $opponentPD,
+                    "offenderMD" => $characterMD,
+                    "defenderMD" => $opponentMD,
                     );
 
                 $characterHP -= ($opponentPA) - ($characterPD);
@@ -133,7 +137,14 @@ class BattleManager extends Controller
                     "defender" => $character->id,
                     "offenderHP" => $opponentHP,
                     "defenderHP" => $characterHP,
-
+                    "offenderPA" => $opponentPA,
+                    "defenderPA" => $characterPA,
+                    "offenderMA" => $opponentMA,
+                    "defenderMA" => $characterMA,
+                    "offenderPD" => $opponentPD,
+                    "defenderPD" => $characterPD,
+                    "offenderMD" => $opponentMD,
+                    "defenderMD" => $characterMD,
                     );
                 
             } else {
@@ -230,7 +241,8 @@ class BattleManager extends Controller
             $battleRecords[] = $opponentRecord;
 
             if ($opponentHP <= 0) {
-                $character->victory_points += (1 + ($opponent->level - $character->level)) * 2;     
+                $character->victory_points += (1 + ($opponent->level - $character->level)) * 2;
+                $character->battle_won++;
                 $character->save();
 
                 if ($opponent->victory_points >= 0) {
@@ -238,6 +250,7 @@ class BattleManager extends Controller
                     if ($opponent->victory_points < 0){
                         $opponent->victory_points = 0;
                     }
+                $opponent->battle_lost++;
                 $opponent->save();
                 }
 
@@ -251,10 +264,12 @@ class BattleManager extends Controller
                         if ($character->victory_points < 0){
                             $character->victory_points = 0;
                         }
+                    $character->battle_lost++;
                     $character->save();
                 }
 
                 $opponent->victory_points += (1 + ($character->level - $opponent->level)) * 2;
+                $opponent->battle_won++;
                 $opponent->save();
 
                 $opponentRecord = $opponent->name . " WON. " . $character->name . " LOST.";

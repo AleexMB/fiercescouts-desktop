@@ -49,6 +49,8 @@ $factory->define(fiercescouts\Character::class, function (Faker\Generator $faker
         'victory_points' => rand(0, 40),
         'chests' => 0,
         'chests_limit' => 5,
+        'battle_won' => 0,
+        'battle_lost' => 0,
         'user_id' => rand(1, $countUsers),
     ];
 });
