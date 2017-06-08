@@ -177,6 +177,7 @@ return [
         fiercescouts\Providers\EventServiceProvider::class,
         fiercescouts\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Jenssegers\Agent\AgentServiceProvider::class,
 
         fiercescouts\Providers\v1\CharacterServiceProvider::class,
 
@@ -230,6 +231,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,         
         'Html' => Collective\Html\HtmlFacade::class,
+        'Agent' => Jenssegers\Agent\Facades\Agent::class,
 
     ],
 
