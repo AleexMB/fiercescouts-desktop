@@ -1,30 +1,31 @@
 @extends("layouts.base")
 @section("create")
 
-
 </body>
   <div class="container-fluid nopaddingleft nopaddingright">
-	<div class="col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10">
-	  <div class="chooseCharacterTitle text-center">
-		<p>WELCOME FIERCESCOUT!<br>
+	<div class="col-md-12">
+    <div class="row">
+      <div class="chooseCharacterTitle text-center">
+		<p>WELCOME FIERCESCOUT!
 CHOOSE YOUR CHARACTER AND START THE ADVENTURE</p>
-	  </div>
-
-	  {{ Form::open(array('url' => 'characters')) }}
-
+	   </div>
+   </div>
+   <div class="row">
+	   {{ Form::open(array('url' => 'characters')) }}
+	   <div class="form-group col-md-4 col-md-offset-4">
+		    {{ Form::text('name', null, array('class' => 'form-control nameBox ', 'placeholder' => 'name' )) }}
+	   </div>
+  </div>
+  <div class="">
 	  <div class="form-group">
-		{{ Form::label('name', 'Name') }}
-		{{ Form::text('name', null, array('class' => 'form-control')) }}
-	  </div>
-	  <div class="form-group">
-		<div class="buttonsGender text-center">
+		    <div class=" buttonsGender text-center ">
 		  <!-- {{ Form::select('gender', ['M' => 'Male', 'F' => 'Female']) }} -->
 		  <!-- {{ Form::radio('single') }} -->
-		  <button id="male" type="button" ><input type='radio' name='gender' value='M' class='radioInvis' id='radioMale'/>Male</button>
-		  <button id="female" type="button" ><input type='radio' name='gender' value='F' class='radioInvis' id='radioFemale'/>Female</button>
+		    <button id="male" type="button" ><input type='radio' name='gender' value='M' class='radioInvis' id='radioMale'/>Male</button>
+		    <button id="female" type="button" ><input type='radio' name='gender' value='F' class='radioInvis' id='radioFemale'/>Female</button>
 		</div>
 	  </div>
-
+  </div>
 	  <div class="row containerCharacter text-center">
 		<div class=" chooseCharacter text-center">
 			<div class="figure nopaddingleft nopaddingright " id="monk">
@@ -84,14 +85,13 @@ CHOOSE YOUR CHARACTER AND START THE ADVENTURE</p>
 			</div>
 		</div>
 	  </div>
-
 	  <div class="row">
-		<div class="confirm text-center">
+		    <div class="confirm text-center">
 		  {{ Form::submit('CONFIRM', array('class' => 'confirmBtn centered')) }}
 		  <!-- <button class="confirmBtn centered" type="button" name="button">CONFIRM</button>
 		</div> -->
-		</div>
-	  {{ Form::close() }}
+		  </div>
+	     {{ Form::close() }}
 	  </div>
 	</div>
   </div>

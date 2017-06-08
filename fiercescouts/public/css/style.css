@@ -272,11 +272,11 @@ body{
 	margin-top: 8vh;
 	font-family: 'trump_gothic_west';
 	color: #fff;
-	font-size: 26pt;
+	font-size: 24pt;
 }
 
 .buttonsGender{
-	margin-top: 4vh;
+	margin-top: 3vh;
 }
 
 #male{
@@ -296,7 +296,7 @@ body{
 }
 
 #male:focus{
-	
+
   outline: none;
 	background-color: #4AC8FF;
 	border: 2px solid #4AC8FF;
@@ -345,7 +345,7 @@ body{
 }
 
 .chooseCharacter{
-	margin-top: 4vh;
+	margin-top: 3vh;
   text-align: center;
   height: 270px;
 }
@@ -458,11 +458,37 @@ body{
 
 .form-group{
 	padding: 3px;
+  margin-bottom: 0px;
 }
+
+.nameBox{
+  padding: 0px;
+}
+
+.form-group input[type=text]{
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: none;
+    background-color: #282E34;
+    color: white;
+    font-family: 'maisonneuebook';
+    outline: none;
+    text-align: center;
+}
+
+.form-group < label{
+  margin: 0px;
+}
+
+.form-group input[type=text]:active{
+    outline: none;
+}
+
 
 .form-control{
 	border: none;
-	box-shadow:2px 2px 20px 2px rgba(0, 0, 3, .08);
+	box-shadow:2px 2px 30px 2px rgba(0, 0, 3, .08);
   background: white;
 }
 
