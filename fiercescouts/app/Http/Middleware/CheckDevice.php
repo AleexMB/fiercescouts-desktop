@@ -3,22 +3,23 @@
 namespace fiercescouts\Http\Middleware;
 
 use Closure;
-use Illuminate\Support\Facades\Auth;
+use Jenssegers\Agent\Agent;
 
-class RedirectIfAuthenticated
+class CheckDevice
 {
     /**
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
-     * @param  string|null  $guard
      * @return mixed
      */
-    public function handle($request, Closure $next, $guard = null)
+    public function handle($request, Closure $next)
     {
-        if (Auth::guard($guard)->check()) {
-            return redirect('/home');
+        $agent = new Agent();
+
+        if ($agent->isMobile() || $agent->isTablet() || $agent->isPhone()) {
+            return redirect('/wrongDevice');
         }
 
         return $next($request);

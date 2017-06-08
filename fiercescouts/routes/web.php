@@ -19,6 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/wrongDevice', function () {
+    return view('wrongDevice');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
