@@ -966,7 +966,6 @@ body{
   font-size: 34pt;
 }
 
-<<<<<<< HEAD
 .itemGrid {
   margin-top: 15vh;
   color: #fff;
@@ -1061,146 +1060,241 @@ body{
 #playerImgLadders {
   width: 50px;
 }
-=======
+
 	/*profilo*/
 
   .boxProfile{
-    height: 70vh;
-    width: auto;
-    background-color: #2B3239;
-    margin-top: 10vh;
-    border-radius: 2px;
-  }
+   height: 70vh;
+   width: auto;
+   background-color: #2B3239 ;
+   margin-top: 10vh;
+   border-radius: 2px;
+ }
 
-  .profileName{
-    height: 60px;
-    background-color: #32373C;
-    width: 100%;
-  }
+ .profileName{
+   height: 60px;
+   background-color: #32373C ;
+   width: 100%;
+ }
 
-  .profileName p{
-    color: #fff;
-    font-size: 22pt;
-    font-family: 'trump_gothic_west';
-    text-align: center;
-    line-height: 60px;
-    white-space: nowrap;
+ .profileName p{
+   color: #fff;
+   font-size: 22pt;
+   font-family: 'trump_gothic_west';
+   text-align: center;
+   line-height: 60px;
+   white-space: nowrap;
 
-  }
+ }
 
-  .pointsBox{
-    height: 60px;
-    border-bottom: solid 1px #95989A;
-  }
+ .pointsBox{
+   height: 60px;
+   border-bottom: solid 1px #95989A ;
+ }
 
-  #experienceProfile{
-    border-right: solid 1px #95989A;
-    height: 60px;
-  }
+ #experienceProfile{
+   border-right: solid 1px #95989A ;
+   height: 60px;
+ }
 
-  #levelProfile{
-    border-right: solid 1px #95989A;
-    height: 60px;
-  }
+ #levelProfile{
+   border-right: solid 1px #95989A ;
+   height: 60px;
+ }
 
-  .points p{
-    text-align: center;
-    color: #fff;
-    font-family: 'trump_gothic_west';
-    font-size: 18pt;
-    line-height: 60px;
-    white-space: nowrap;
+ .points p{
+   text-align: center;
+   color: #fff;
+   font-family: 'trump_gothic_west';
+   font-size: 18pt;
+   line-height: 60px;
+   white-space: nowrap;
 
-  }
+ }
 
-  .profileImage{
-    height: 35vh;
-    text-align: center;
-    background-color: red;
-    width: 80%;
-    margin-top: 10vh;
-    margin-right: auto;
-    margin-left: auto;
-  }
+ .profileImage{
+   height: 35vh;
+   text-align: center;
+   background-color: red;
+   width: 80%;
+   margin-top: 10vh;
+   margin-right: auto;
+   margin-left: auto;
+ }
 
-  .skills{
-    display: inline-block;
-    width: auto;
-    height: 80px;
-    text-align: center;
-  }
+ .skills{
+   display: inline-block;
+   width: auto;
+   height: 80px;
+   text-align: center;
+ }
 
-  .skillProfile{
-    display: inline-block;
-    margin-top: 10vh;
-    margin-right: 30px;
-  }
+ .skillProfile{
+   display: inline-block;
+   margin-top: 10vh;
+   margin-right: 30px;
+ }
 
-  .skillProfile p{
-    font-family: 'trump_gothic_west';
-    color: #fff;
-    text-align: center;
-    font-size: 16pt;
-  }
+ .skillProfile p{
+   font-family: 'trump_gothic_west';
+   color: #fff;
+   text-align: center;
+   font-size: 16pt;
+ }
 
-  #userSkill{
-    margin-left: 30px;
-  }
+ #userSkill{
+   margin-left: 30px;
+ }
 
-  .imgSkillsProfile{
-    border-radius: 50px;
-    height: 50px;
-    width: 50px;
-    display: inline-block;
-    background-color: blue;
-  }
+ .imgSkillsProfile{
+   border-radius: 50px;
+   height: 50px;
+   width: 50px;
+   display: inline-block;
+   background-color: blue;
+ }
 
-  .atkProfile{
-    width: auto;
-    height: 80px;
-    text-align: center;
-    margin-top: 3vh;
-  }
+ .atkProfile{
+   width: auto;
+   height: 80px;
+   text-align: center;
+   margin-top: 3vh;
+ }
 
-  .statisticsAttkProfile{
-    height: 80px;
-    width: 80px;
-    border-radius: 2px;
-    background-color: #32373C;
-    display: inline-block;
-    margin: 10px;
-  }
+ .statisticsAttkProfile{
+   height: 80px;
+   width: 80px;
+   border-radius: 2px;
+   background-color: #32373C ;
+   display: inline-block;
+   margin: 10px;
+ }
 
-  .statisticsAttkProfile p{
-    line-height: 80px;
-    margin-left: auto;
-    margin-right: auto;
-    white-space: nowrap;
-    font-family: 'trump_gothic_west';
-    color: #fff;
-    font-size: 10pt;
+ .statisticsAttkProfile p{
+   line-height: 80px;
+   margin-left: auto;
+   margin-right: auto;
+   white-space: nowrap;
+   font-family: 'trump_gothic_west';
+   color: #fff;
+   font-size: 10pt;
 
-  }
+ }
 
-  .userHp{
-    margin-top: 4vh;
-    height: auto;
-  }
+ .userHp{
+   margin-top: 4vh;
+   height: auto;
+ }
 
-  .userHp{
-    font-family: 'trump_gothic_west';
-    color: #fff;
-    text-align: center;
-    font-size: 16pt;
-    text-align: center;
-  }
+ .userHp{
+   font-family: 'trump_gothic_west';
+   color: #fff;
+   text-align: center;
+   font-size: 16pt;
+   text-align: center;
+ }
 
-  .lifePointsProfile{
-    height: 1vh;
-    border-radius: 4px;
-    width: 80%;
-    background-color: #4FCC53;
-    text-align: center;
-    margin: auto;
-  }
->>>>>>> 4b9f389d1b18544f5862f235d5551fb3948a01bc
+ .lifePointsProfile{
+   height: 1vh;
+   border-radius: 4px;
+   width: 80%;
+   background-color: #4FCC53 ;
+   text-align: center;
+   margin: auto;
+ }
+<<<<<<< HEAD
+=======
+.itemGrid {
+ margin-top: 15vh;
+ color: #fff;
+ font-family: "trump_gothic_west";
+ font-size: 16pt;
+}
+
+.itemCard {
+ display: inline-block;
+ text-align: center;
+ width: 180px;
+ height: 260px;
+ background-color: #32373c ;
+ margin-top: 3px;
+}
+
+.itemImgcommon {
+ margin-top: 15px;
+ border-radius: 2px;
+ width: 100px;
+ height: 100px;
+ border-bottom: 3px solid white;
+}
+
+.itemImgrare {
+ margin-top: 15px;
+ border-radius: 2px;
+ width: 100px;
+ height: 100px;
+ border-bottom: 3px solid blue;
+}
+
+.itemImglegendary {
+ margin-top: 15px;
+ border-radius: 2px;
+ width: 100px;
+ height: 100px;
+ border-bottom: 3px solid orange;
+}
+
+.itemName {
+ margin-top: 15px;
+}
+
+.itemStats {
+ font-family: "maisonneuebook";
+ font-size: 8pt;
+}
+
+.itemSeparator {
+ /*border-top: 1px solid #fff;*/
+ height: 42px;
+}
+
+.equipR {
+ font-size: 16pt;
+ border: none;
+ float: right;
+ width: 50%;
+ background-color: transparent;
+ margin-bottom: 0px;
+ border-radius: none;
+}
+
+.equipL {
+ font-size: 16pt;
+ border: none;
+ float: left;
+ width: 50%;
+ background-color: transparent;
+ margin-bottom: 0px;
+ border-radius: none;
+}
+
+.equipR:hover, .equipL:hover, .equipR:focus, .equipL:focus, .equipR:active, .equipL:active{
+ background-color: #4AC8FF ;
+ border-radius: 0px;
+}
+
+.itemContent {
+ position: absolute;
+}
+
+.itemsStatsBox {
+ position: relative;
+ z-index: 2;
+ background-color: red;
+ height: 100%;
+ width: 100%;
+}
+
+#playerImgLadders {
+ width: 50px;
+}
