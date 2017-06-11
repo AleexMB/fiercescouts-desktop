@@ -37,17 +37,19 @@
           <a class="chests">CHESTS</a>
           <a class="profile" onclick="window.location='{{ route("characters.index") }}'">PROFILE</a>
         </div>
-        <div class="rightAreaNavbar">
-          <div class="userImage"></div>
-          <p class="userName">{{ Auth::user()->name }}</p>
-          <a class="logout" href="{{ route('logout') }}"
-              onclick="event.preventDefault();
-                       document.getElementById('logout').submit();">
-              LOGOUT
-          </a>
-          <form  id="logout" class="logout" action="{{ route('logout') }}" method="POST">
-              {{ csrf_field() }}
-          </form>
+        <div class="fixedRight">
+          <div class="rightAreaNavbar">
+            <div class="userImage"></div>
+            <p class="userName">{{ Auth::user()->name }}</p>
+            <a class="logout" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                         document.getElementById('logout').submit();">
+                LOGOUT
+            </a>
+            <form  id="logout" class="logout" action="{{ route('logout') }}" method="POST">
+                {{ csrf_field() }}
+            </form>
+          </div>
         </div>
       </div>
     </div>
