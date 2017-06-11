@@ -1,87 +1,41 @@
 @extends("layouts.base")
 @section("create")
-
-
-<body>
-  <div class="container-fluid nopaddingleft nopaddingright">
-    <div class="col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 nopaddingleft nopaddingright">
-      <div class="row">
-        <div class="col-md-3 col-lg-3 firstCharacter nopaddingleft nopaddingright">
-          <h1 class="userNameBattle text-center">USERNAME1</h1>
-          <p class="levelUser text-center">LEVEL 9</p>
-          <div id ="userOneImage">
-          </div>
-          <div class="containerSkills text-center">
-            <h1>MONK</h1>
-            <div class="HP">
-              <div id="lifePointsUserOne">
-              </div>
-            </div>
-            <p class="hpUser">HP 100/200</p>
-            <div class="atkContainer">
-              <div class="centererValue">
-                <div class="atk">
-                  <p>ATTACK:...</p>
-                  <p>MAGIC ATTACK:...</p>
-                </div>
-                <div class="def">
-                  <p>DEF:...</p>
-                  <p>MAGIC DEF:...</p>
-                </div>
-              </div>
-            </div>
-            <div class="skillsContainer">
-              <div class="potions" id="potionUserOne">
-              </div>
-              <div class="weaponLeft" id="weaponLeftUserOne">
-              </div>
-              <div class="weaponRight" id="weaponRightUserOne">
-              </div>
-              <div class="skill" id="skillUserOne">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-offset-1 col-md-4 display nopaddingright nopaddingleft">
-          <h1 class="titleBattle text-center">BATTLE MODE</h1>
-        </div>
-        <div class="col-md-offset-1 col-md-3 col-lg-offset-1 col-lg-3 secondCharacter nopaddingleft nopaddingright">
-          <h1 class="userNameBattle text-center">USERNAME1</h1>
-          <p class="levelUser text-center">LEVEL 9</p>
-          <div id="userTwoImage">
-          </div>
-          <div class="containerSkills text-center">
-            <h1>MONK</h1>
-            <div class="HP text-center">
-              <div id="lifePointsUserTwo">
-              </div>
-            </div>
-            <p class="hpUser">HP 100/200</p>
-            <div class="atkContainer text-center">
-              <div class="atk">
-                <p>ATTACK:...</p>
-                <p>MAGIC ATTACK:...</p>
-              </div>
-              <div class="def">
-                <p>DEF:...</p>
-                <p>MAGIC DEF:...</p>
-              </div>
-            </div>
-            <div class="skillsContainer">
-              <div class="potions" id="potionUserTwo">
-              </div>
-              <div class="weaponLeft" id="weaponLeftUserTwo">
-              </div>
-              <div class="weaponRight" id="weaponRightUserTwo">
-              </div>
-              <div class="skill" id="skillUserTwo">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-    </div>
+  <style>
+    body {
+        overflow: scroll;
+    }
+  </style>
+  <div id="titleCenter" class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+    <h1>TOP 10 BY VICTORY POINTS</h1>
   </div>
-</body>
+  <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+    <table class="table" id="tableLadders">
+     <thead>
+     
+         <tr>
+             <td>GRADE</td>
+             <td>NAME</td>
+             <td class="laddersY">LEVEL</td>
+             <td class="laddersG">WON</td>
+             <td class="laddersR">LOST</td>
+             <td>VICTORY POINTS</td>
+         </tr>
+     </thead>
+     <tbody>
+     <?php $i = 1; ?>
+     @foreach($ranks as $key => $value)
+          
+         <tr>
+             <td>{{ $i }}</td>
+             <td>{{ $value->name }}</td>
+             <td class="laddersY">{{ $value->level }}</td>
+             <td class="laddersG">{{ $value->battle_won }}</td>
+             <td class="laddersR">{{ $value->battle_lost }}</td>
+             <td>{{ $value->victory_points }}</td>
+         </tr>
+          <?php $i++; ?>
+     @endforeach
+     </tbody>
+    </table>
+  </div>
 @endsection

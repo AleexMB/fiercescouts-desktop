@@ -26,7 +26,7 @@ class ItemController extends Controller
 	{
 		//$items = Item::all()->where('character_id')belongsTo(Auth::Id());
 		$character = Character::all()->where('user_id', Auth::id())->first();
-		$items = Item::all()->where('character_id', $character->id);
+		$items = Item::all()->sortByDesc('itemlv')->where('character_id', $character->id);
 		
         return view("items.index")->with('items', $items);
 
@@ -71,6 +71,12 @@ class ItemController extends Controller
 					$item->p_defence = $stats[3];
 					$item->m_defence = $stats[4];
 					$item->itemlv = $stats[5];
+
+					if ($item->rarity == "legendary") {
+						$item->img = rand(200, 209);
+					} else {
+						$item->img = rand(1, 84);
+					}
 					
 					$item->character_id = DB::table('characters')->where('user_id', Auth::id())->value('id');
 

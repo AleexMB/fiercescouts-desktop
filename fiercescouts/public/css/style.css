@@ -74,6 +74,14 @@ body{
     color: #fff;
 }
 
+#titleCenter {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+  color: white;
+  font-family: 'trump_gothic_west';
+}
+
 .links > a {
     color: #fff;
     padding: 0 25px;
@@ -102,7 +110,33 @@ body{
 }
 
 #tableLadders{
-  margin-top: 20vh;
+  /*margin-top: 20vh;*/
+  color: #fff;
+  border: none;
+  text-align: center;
+  font-family: 'trump_gothic_west';
+  font-size: 20px;
+}
+
+#tableLadders>tbody>tr>td {
+  border: none;
+  border-bottom: 1px solid #32373C;
+}
+
+.laddersY {
+  color: #FFC500;
+}
+
+.laddersG {
+  color: #4FCC53;
+}
+
+.laddersR {
+  color: #FF5757;
+}
+
+.laddersNoCenter {
+  text-align: left;
 }
 
 #tableProfile{
@@ -804,4 +838,99 @@ body{
   z-index: 100;
   text-align: center;
   font-size: 34pt;
+}
+
+.itemGrid {
+  margin-top: 15vh;
+  color: #fff;
+  font-family: "trump_gothic_west";
+  font-size: 16pt;
+}
+
+.itemCard {
+  display: inline-block;
+  text-align: center;
+  width: 180px;
+  height: 260px;
+  background-color: #32373c;
+  margin-top: 3px;
+}
+
+.itemImgcommon {
+  margin-top: 15px;
+  border-radius: 2px;
+  width: 100px;
+  height: 100px;
+  border-bottom: 3px solid white;
+}
+
+.itemImgrare {
+  margin-top: 15px;
+  border-radius: 2px;
+  width: 100px;
+  height: 100px;
+  border-bottom: 3px solid blue;
+}
+
+.itemImglegendary {
+  margin-top: 15px;
+  border-radius: 2px;
+  width: 100px;
+  height: 100px;
+  border-bottom: 3px solid orange;
+}
+
+.itemName {
+  margin-top: 15px;
+}
+
+.itemStats {
+  font-family: "maisonneuebook";
+  font-size: 8pt;
+}
+
+.itemSeparator {
+  /*border-top: 1px solid #fff;*/
+  height: 42px;
+}
+
+.equipR {
+  font-size: 16pt;
+  border: none;
+  float: right;
+  width: 50%;
+  background-color: transparent;
+  margin-bottom: 0px;
+  border-radius: none;
+}
+
+.equipL {
+  font-size: 16pt;
+  border: none;
+  float: left;
+  width: 50%;
+  background-color: transparent;
+  margin-bottom: 0px;
+  border-radius: none;
+}
+
+.equipR:hover, .equipL:hover, .equipR:focus, .equipL:focus, .equipR:active, .equipL:active{
+  background-color: #4AC8FF;
+  border-radius: 0px;
+}
+
+.itemContent {
+  position: absolute;
+}
+
+.itemsStatsBox {
+  position: relative;
+  z-index: 2;
+  background-color: red;
+  height: 100%;
+  width: 100%;
+}
+
+#playerImgLadders {
+  width: 50px;
 }

@@ -109,12 +109,23 @@ class BattleManager extends Controller
             $opponentMD += $opponentWL->m_defence;
         }
 
+        $characterMaxHP = $characterHP;
+        $opponentMaxHP = $opponentHP;
+
         $battleRecords = [];
 
     	while (($characterHP > 0) && ($opponentHP > 0)) {
 
             if ($turn % 2 != 0) {
         		$opponentHP -= ($characterPA) - ($opponentPD);
+
+                if ($characterHP >= $characterMaxHP) {
+                    $characterHP = $characterMaxHP;
+                }
+
+                if ($opponentHP >= $opponentMaxHP) {
+                    $opponentHP = $opponentMaxHP;
+                }
 
                 $characterRecord = array("desc" => $character->name . " attacked with weapons and did " . ($characterPA - $opponentPD) . " damage to " . $opponent->name . ". " . $opponent->name . " has " . $opponentHP . " HP left.",
                     "offender" => $character->id,
@@ -132,6 +143,14 @@ class BattleManager extends Controller
                     );
 
                 $characterHP -= ($opponentPA) - ($characterPD);
+
+                if ($characterHP >= $characterMaxHP) {
+                    $characterHP = $characterMaxHP;
+                }
+
+                if ($opponentHP >= $opponentMaxHP) {
+                    $opponentHP = $opponentMaxHP;
+                }
 
                 $opponentRecord = array("desc" => $opponent->name . " attacked with weapons and did " . ($opponentPA - $characterPD) . " damage to " . $character->name . ". " . $character->name . " has " . $characterHP . " HP left.",
                     "offender" => $opponent->id,
@@ -185,10 +204,28 @@ class BattleManager extends Controller
                     $opponentPD = $newBattleStats['oPD'];
                     $opponentMD = $newBattleStats['oMD'];
 
+                    if ($characterHP >= $characterMaxHP) {
+                        $characterHP = $characterMaxHP;
+                    }
+
+                    if ($opponentHP >= $opponentMaxHP) {
+                        $opponentHP = $opponentMaxHP;
+                    }
+
                     $characterRecord = $character->name . " used " . $skill->name . ". " . $opponent->name . " has " . $opponentHP . " HP left.";
 
                 } else {
+                    // SE NON HA SKILL EQUIPAGGIATA
+
                     $opponentHP -= ($characterPA - $opponentPD);
+
+                    if ($characterHP >= $characterMaxHP) {
+                        $characterHP = $characterMaxHP;
+                    }
+
+                    if ($opponentHP >= $opponentMaxHP) {
+                        $opponentHP = $opponentMaxHP;
+                    }
 
                     $characterRecord = $character->name . " attacked with weapons and did " . ($characterPA - $opponentPD) . " damage to " . $opponent->name . ". " . $opponent->name . " has " . $opponentHP . " HP left.";
                 }
@@ -228,10 +265,28 @@ class BattleManager extends Controller
                     $opponentPD = $newBattleStats['cPD'];
                     $opponentMD = $newBattleStats['cMD'];
 
+                    if ($characterHP >= $characterMaxHP) {
+                        $characterHP = $characterMaxHP;
+                    }
+
+                    if ($opponentHP >= $opponentMaxHP) {
+                        $opponentHP = $opponentMaxHP;
+                    }
+
                     $opponentRecord = $opponent->name . " used " . $skill->name . ". " .  $character->name . " has " . $characterHP . " HP left.";
 
                 } else {
+
+                    // SE NON HA SKILL EQUIPAGGIATA
                     $characterHP -= ($opponentPA - $characterPD);
+
+                    if ($characterHP >= $characterMaxHP) {
+                        $characterHP = $characterMaxHP;
+                    }
+
+                    if ($opponentHP >= $opponentMaxHP) {
+                        $opponentHP = $opponentMaxHP;
+                    }
 
                     $opponentRecord = $opponent->name . " attacked with weapons and did " . ($opponentPA - $characterPD) . " damage to " . $character->name . ". " . $character->name . " has " . $characterHP . " HP left.";
                 }
