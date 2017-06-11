@@ -31,8 +31,10 @@
         </div>
         <div class="centerAreaNavbar text- ">
           <a class="items" onclick="window.location='{{ route("items.index") }}'">ITEMS</a>
+          <a class="ladders">LADDERS</a>
           <img class="battleMode text-center ">
           </img>
+          <a class="chests">CHESTS</a>
           <a class="profile" onclick="window.location='{{ route("characters.index") }}'">PROFILE</a>
         </div>
         <div class="rightAreaNavbar">

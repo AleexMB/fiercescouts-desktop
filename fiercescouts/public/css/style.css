@@ -26,10 +26,100 @@
 }
 
 body{
-	font-family: 'maisonneuebook' !important;
-	color: #21282E !important;
+	font-family: 'maisonneuebook' ;
+	color: #21282E ;
 	background-color: #21282E;
 	overflow: hidden;
+}
+
+	/*login*/
+#boxLogin{
+  background-color: #21282E;
+  border: none;
+  text-align: center;
+  margin-top: 5vh;
+}
+
+.checkbox{
+  float: left;
+}
+
+
+.submitLoginBox{
+  margin-top: 20vh;
+}
+
+.confirmLoginBtn{
+  float: right;
+  background-color: #21282E;
+  border: none;
+  font-family: 'trump_gothic_west';
+  font-size: 20pt;
+  transition-duration: 0.2s;
+  transition-property: transform;
+  margin: 0px;
+}
+
+.confirmLoginBtn:hover{
+  	transform: scale(1.1);
+    background-color: transparent;
+}
+
+#email{
+  background-color: #21282E;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.0);
+  color: #fff;
+  height: 60px;
+  border-radius: 0px;
+  padding: 0px 30px;
+  font-family: 'trump_gothic_west';
+  font-size: 36pt;
+
+}
+
+#email::-webkit-input-placeholder{
+  font-family: 'trump_gothic_west';
+  font-size: 40pt;
+  opacity: 0.5;
+}
+
+#email input[type=text]{
+  font-family: 'trump_gothic_west';
+  font-size: 40pt;
+}
+
+
+#password{
+  background-color: #21282E;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.0);
+  color: #fff;
+  height: 60px;
+  font-family: 'trump_gothic_west';
+  font-size: 40pt;
+  border-radius: 0px;
+  padding: 0px 30px;
+  margin-top: 5vh;
+
+}
+
+#password::-webkit-input-placeholder{
+  font-family: 'trump_gothic_west';
+  font-size: 40pt;
+  opacity: 0.5;
+}
+
+.checkRememberLogin{
+  color: #fff;
+  font-family: 'maisonneuebook';
+  margin: 0px;
+}
+
+.forgot{
+  color: #fff;
+  font-family: 'maisonneuebook';
+  padding: 0px;
+  font-size: 10pt;
+  margin-left: 3vw;
 }
 
 	/*welcome page*/
@@ -114,6 +204,7 @@ body{
 .navbarContainer{
 	background-color: #21282E;
 	height: 100px;
+  position: fixed;
 }
 
 
@@ -154,6 +245,20 @@ body{
   text-decoration: none;
 }
 
+.ladders{
+  padding-right: 3vw;
+  color: #fff;
+  font-size: 18pt;
+  font-family: 'trump_gothic_west';
+  opacity: 0.8;
+}
+
+.ladders:hover{
+	opacity: 1;
+  color: #fff;
+  text-decoration: none;
+}
+
 .battleMode{
 	width: 80px;
 	height: 80px;
@@ -168,6 +273,21 @@ body{
 	position:relative;
 	box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
 }
+
+.chests{
+	padding-left: 3vw;
+	color: #fff;
+	font-size: 18pt;
+	font-family: 'trump_gothic_west';
+	opacity: 0.8;
+}
+
+.chests:hover{
+	opacity: 1;
+  color: #fff;
+  text-decoration: none;
+}
+
 
 .profile{
 	padding-left: 3vw;
@@ -246,7 +366,7 @@ body{
 	color: #fff;
 	float: left;
   transition-duration: 0.3s;
- transition-property: transform;
+  transition-property: transform;
 }
 
 .navbar-brand:hover{
@@ -458,14 +578,14 @@ body{
 
 .form-group{
 	padding: 3px;
-  margin-bottom: 0px;
 }
 
 .nameBox{
   padding: 0px;
+  margin-bottom: 0px;
 }
 
-.form-group input[type=text]{
+.nameBox input[type=text]{
     width: 100%;
     padding: 12px 20px;
     box-sizing: border-box;
@@ -477,11 +597,11 @@ body{
     text-align: center;
 }
 
-.form-group < label{
+.nameBox < label{
   margin: 0px;
 }
 
-.form-group input[type=text]:active{
+.nameBox input[type=text]:active{
     outline: none;
 }
 
@@ -502,7 +622,7 @@ body{
 #navbarx{
 	background: transparent;
 	border: none;
-	height: 200px;
+	height: 100px;
 }
 
 .navbarHeight{
@@ -805,3 +925,145 @@ body{
   text-align: center;
   font-size: 34pt;
 }
+
+	/*profilo*/
+
+  .boxProfile{
+    height: 70vh;
+    width: auto;
+    background-color: #2B3239;
+    margin-top: 10vh;
+    border-radius: 2px;
+  }
+
+  .profileName{
+    height: 60px;
+    background-color: #32373C;
+    width: 100%;
+  }
+
+  .profileName p{
+    color: #fff;
+    font-size: 22pt;
+    font-family: 'trump_gothic_west';
+    text-align: center;
+    line-height: 60px;
+    white-space: nowrap;
+
+  }
+
+  .pointsBox{
+    height: 60px;
+    border-bottom: solid 1px #95989A;
+  }
+
+  #experienceProfile{
+    border-right: solid 1px #95989A;
+    height: 60px;
+  }
+
+  #levelProfile{
+    border-right: solid 1px #95989A;
+    height: 60px;
+  }
+
+  .points p{
+    text-align: center;
+    color: #fff;
+    font-family: 'trump_gothic_west';
+    font-size: 18pt;
+    line-height: 60px;
+    white-space: nowrap;
+
+  }
+
+  .profileImage{
+    height: 35vh;
+    text-align: center;
+    background-color: red;
+    width: 80%;
+    margin-top: 10vh;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .skills{
+    display: inline-block;
+    width: auto;
+    height: 80px;
+    text-align: center;
+  }
+
+  .skillProfile{
+    display: inline-block;
+    margin-top: 10vh;
+    margin-right: 30px;
+  }
+
+  .skillProfile p{
+    font-family: 'trump_gothic_west';
+    color: #fff;
+    text-align: center;
+    font-size: 16pt;
+  }
+
+  #userSkill{
+    margin-left: 30px;
+  }
+
+  .imgSkillsProfile{
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    background-color: blue;
+  }
+
+  .atkProfile{
+    width: auto;
+    height: 80px;
+    text-align: center;
+    margin-top: 3vh;
+  }
+
+  .statisticsAttkProfile{
+    height: 80px;
+    width: 80px;
+    border-radius: 2px;
+    background-color: #32373C;
+    display: inline-block;
+    margin: 10px;
+  }
+
+  .statisticsAttkProfile p{
+    line-height: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: nowrap;
+    font-family: 'trump_gothic_west';
+    color: #fff;
+    font-size: 10pt;
+
+  }
+
+  .userHp{
+    margin-top: 3vh;
+    height: auto;
+  }
+
+  .userHp{
+    font-family: 'trump_gothic_west';
+    color: #fff;
+    text-align: center;
+    font-size: 16pt;
+    text-align: center;
+  }
+
+  .lifePointsProfile{
+    height: 1vh;
+    border-radius: 4px;
+    width: 80%;
+    background-color: #4FCC53;
+    text-align: center;
+    margin: auto;
+  }
