@@ -3,6 +3,10 @@
 namespace fiercescouts\Http\Controllers;
 
 use Illuminate\Http\Request;
+use fiercescouts\Character;
+use fiercescouts\User;
+use Auth;
+use URL;
 
 class HomeController extends Controller
 {
@@ -24,7 +28,13 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $character = Character::all()->where('user_id', Auth::id());
+        if ($character) {
+            $character = Character::all()->where('user_id', Auth::id())->first();
+            return redirect(URL::to('characters/' . $character->id));
+        }
+
     //return 'test';
-       return view('home');
+       //return view('home');
     }
 }

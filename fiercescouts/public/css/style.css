@@ -967,6 +967,7 @@ body{
 }
 
 .itemGrid {
+  z-index: -10;
   margin-top: 15vh;
   color: #fff;
   font-family: "trump_gothic_west";

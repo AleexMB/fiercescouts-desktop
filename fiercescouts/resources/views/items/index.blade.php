@@ -1,11 +1,12 @@
 @extends("layouts.base")
 @section("create")
 <style>
-    body {
+    #scrollableTab {
         overflow: scroll;
+        height: 80vh;
     }
 </style>
-
+<div id="scrollableTab">
 <div class="col-lg-8 col-lg-offset-2 itemGrid">
 @foreach($items as $key => $value)
     <div class="itemCard">        
@@ -39,6 +40,8 @@
     </tr> -->
 @endforeach
 </div>
+</div>
+
 
 <!-- <table class="table table-striped table-bordered">
     <thead>

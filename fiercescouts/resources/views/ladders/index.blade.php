@@ -1,10 +1,16 @@
 @extends("layouts.base")
 @section("create")
-  <style>
-    body {
+<style>
+    #scrollableTab {
         overflow: scroll;
+        height: 80vh;
     }
-  </style>
+
+    #titleCenter {
+        z-index: -1;
+    }
+</style>
+<div id="scrollableTab">
   <div id="titleCenter" class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
     <h1>TOP 10 BY VICTORY POINTS</h1>
   </div>
@@ -37,5 +43,6 @@
      @endforeach
      </tbody>
     </table>
+  </div>
   </div>
 @endsection
