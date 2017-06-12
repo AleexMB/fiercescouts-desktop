@@ -4,6 +4,7 @@ namespace fiercescouts\Http\Controllers;
 
 use Illuminate\Http\Request;
 use fiercescouts\Character;
+use fiercescouts\Item;
 use Auth;
 
 class CharacterController extends Controller
@@ -104,10 +105,34 @@ class CharacterController extends Controller
 	public function show($id)
 	{
 		$character = Character::find($id);
+		$itemLID = $character->weapon_left;
+		$itemRID = $character->weapon_right;
+
+		$itemR = Item::find($itemRID);
+		$itemL = Item::find($itemLID);
 
         // show the view and pass the nerd to it
-        return view('characters.show')
-            ->with('character', $character);
+		if ($itemR && $itemL) {
+			return view('characters.show')
+            ->with('character', $character)
+            ->with('itemR', $itemR)
+            ->with('itemL', $itemL);
+		} else if ($itemR && !$itemL) {
+			return view('characters.show')
+            ->with('character', $character)
+            ->with('itemR', $itemR)
+            ->with('itemL', null);
+		} else if (!$itemR && $itemL) {
+			return view('characters.show')
+            ->with('character', $character)
+            ->with('itemR', null)
+            ->with('itemL', $itemL);
+		} else {
+	        return view('characters.show')
+	            ->with('character', $character)
+	            ->with('itemR', null)
+	            ->with('itemL', null);
+	    }
 	}
 
 	/**

@@ -5,6 +5,10 @@
         overflow: scroll;
         height: 80vh;
     }
+
+    .itemGrid {
+        z-index: 1;
+    }
 </style>
 <div id="scrollableTab">
 <div class="col-lg-8 col-lg-offset-2 itemGrid">
@@ -27,7 +31,7 @@
             <p class="itemStats">Mdef: {{ $value->m_defence }}</p> -->
 
             
-            <a class="btn btn-small btn-success equipR" href="{{ URL::to('items/equipR/' . $value->id) }}">R</a>
+            <a class="btn btn-small btn-success equipR upperBtn" href="{{ URL::to('items/equipR/' . $value->id) }}">R</a>
             <a class="btn btn-small btn-success equipL" href="{{ URL::to('items/equipL/' . $value->id) }}">L</a>
 
         

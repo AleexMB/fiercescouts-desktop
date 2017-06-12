@@ -20,7 +20,31 @@
       </div>
       <div class="col-md-12">
         <div class="col-md-6 ">
-          <img src="" alt="" class="img-responsive profileImage text-center">
+          @if ($character->gender == "M")
+                @if ($character->class == "warrior")
+                    <td><img class="img-responsive profileImage text-center" src="{{URL::asset('/images/characters/male_warrior.png')}}" alt="character"></td>
+                @elseif ($character->class == "mage")
+                    <td><img class="img-responsive profileImage text-center" src="{{URL::asset('/images/characters/male_mage.png')}}" alt="character""></td>
+                @elseif ($character->class == "assassin")
+                    <td><img class="img-responsive profileImage text-center" src="{{URL::asset('/images/characters/male_assassin.png')}}" alt="character"></td>
+                @elseif ($character->class == "demon")
+                    <td><img class="img-responsive profileImage text-center" src="{{URL::asset('/images/characters/male_demon.png')}}" alt="character"></td>
+                @elseif ($character->class == "monk")
+                    <td><img class="img-responsive profileImage text-center" src="{{URL::asset('/images/characters/male_monk.png')}}" alt="character"></td>
+                @endif
+            @else
+                @if ($character->class == "warrior")
+                    <td><img class="img-responsive profileImage text-center" src="{{URL::asset('/images/characters/female_warrior.png')}}" alt="character""></td>
+                @elseif ($character->class == "mage")
+                    <td><img class="img-responsive profileImage text-center" src="{{URL::asset('/images/characters/female_mage.png')}}" alt="character"></td>
+                @elseif ($character->class == "assassin")
+                    <td><img class="img-responsive profileImage text-center" src="{{URL::asset('/images/characters/female_assassin.png')}}" alt="character"></td>
+                @elseif ($character->class == "demon")
+                    <td><img class="img-responsive profileImage text-center" src="{{URL::asset('/images/characters/female_demon.png')}}" alt="character"></td>
+                @elseif ($character->class == "monk")
+                    <td><img class="img-responsive profileImage text-center" src="{{URL::asset('/images/characters/female_monk.png')}}" alt="character"></td>
+                @endif
+            @endif
         </div>
         <div class="col-md-6 nopaddingleft nopaddingright text-center">
           <div class="skills">
@@ -32,11 +56,17 @@
             <div class="skillProfile" id="weaponLeftProfile">
               <p>WEAPON LEFT</p>
               <div class="imgSkillsProfile">
+                @if ($itemL)
+                  <img src="{{ URL::asset('/images/items/' . $itemL->img . '.png') }}">
+                @endif
               </div>
             </div>
             <div class="skillProfile" id="weaponRightProfile">
               <p>WEAPON RIGHT</p>
               <div class="imgSkillsProfile">
+                @if ($itemR)
+                  <img src="{{ URL::asset('/images/items/' . $itemR->img . '.png') }}">
+                @endif
               </div>
             </div>
           </div>

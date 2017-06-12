@@ -181,13 +181,13 @@ class GameManager extends Controller
             $character->weapon_right = $id;
             $character->save();
 
-            return redirect("characters");
+            return redirect("home");
         } else {
             $character->weapon_left = null;
             $character->weapon_right = $id;
             $character->save();
 
-            return redirect("characters");
+            return redirect("home");
         }
     }
 
@@ -198,13 +198,13 @@ class GameManager extends Controller
             $character->weapon_left = $id;
             $character->save();
 
-            return redirect("characters");
+            return redirect("home");
         } else {
             $character->weapon_right = null;
             $character->weapon_left = $id;
             $character->save();
 
-            return redirect("characters");
+            return redirect("home");
         }
     }
 }
