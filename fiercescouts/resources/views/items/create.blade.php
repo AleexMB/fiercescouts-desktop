@@ -1,53 +1,24 @@
-@extends("layouts.master")
-@section("content")
+@extends("layouts.base")
+@section("create")
 
 <div class="container">
   <div class="row">
     <div class="col-md-offset-3 col-md-6">
-      <div class="chestContainer">
-        <div class="imageChest">
+      <div class="containerUserChest">
+        <p class="chestNumber">PROVA</p>
+        <p class="infoChest">Click the coffer to reveal your new items</p>
+        <div class="chestContainer">
+          <div class="imageChest">
+          </div>
         </div>
-        <h1 class="titleChest">CHEST 1</h1>
-        <button type="button" name="OPEN CHEST"></button>
       </div>
     </div>
   </div>
-
-  <style media="screen">
-
-    html, body {
-      background-color: #f3f3f3;
-      font-family:'Poppins',sans-serif;
-      font-weight: 100;
-    }
-
-    .chestContainer{
-      width: auto;
-      margin-top: 25vh;
-      background-color: blue;
-      height: auto;
-    }
-
-    .imageChest{
-      background-color: white;
-      height: 30vh;
-      width: auto;
-    }
-
-    .titleChest{
-      text-align: center;
-      color: #ffffff;
-      font-size:24px;
-      font-family: 'Poppins'
-      font-weight: 300;
-
-    }
-
-  </style>
+@endsection
 
 <!-- if there are creation errors, they will show here -->
 
-{{ Form::open(array('url' => 'items')) }}
+<!-- {{ Form::open(array('url' => 'items')) }}
 
 <!--      <div class="form-group">
         {{ Form::label('name', 'Name') }}
@@ -63,8 +34,7 @@
         {{ Form::select('gender', ['M' => 'Male', 'F' => 'Female']) }}
     </div> -->
 
-    {{ Form::submit('Create the Item!', array('class' => 'btn btn-primary')) }}
+  <!--   {{ Form::submit('Create the Item!', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
-</div>
-@endsection
+</div>-->
