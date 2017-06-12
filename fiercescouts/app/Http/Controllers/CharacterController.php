@@ -93,7 +93,7 @@ class CharacterController extends Controller
         $character->user_id = Auth::id();
         $character->save();
 
-        return redirect('characters');
+        return redirect('home');
 	}
 
 	/**
@@ -179,7 +179,7 @@ class CharacterController extends Controller
         }
 
         // redirect
-        return redirect('characters');
+        return redirect('home');
 	}
 
 	/**
