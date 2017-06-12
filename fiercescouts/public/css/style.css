@@ -150,10 +150,16 @@ body{
 
 .imageChest{
   background-image: url("../../images/forziere.png");
+  background-color: #21282E;
   backround-position: center;
   background-size: cover;
-  height: 100%;
+  border: none;
+  height: 40vh;
   width: 100%;
+}
+
+.imageChest:focus{
+  outline: none;
 }
 
 	/*welcome page*/
@@ -783,7 +789,7 @@ body{
   }
 
   #userOneImage{
-    background-image: url("../../images/characters/male_monk.png");
+    background-image: url('');
     background-size: 80%;
     background-position: center;
       background-repeat: no-repeat;
@@ -793,7 +799,7 @@ body{
   }
 
   #userTwoImage{
-    background-image: url("../../images/characters/female_assassin.png");
+    background-image: url('');
     background-size: 80%;
     background-position: center;
       background-repeat: no-repeat;
@@ -1016,12 +1022,51 @@ body{
   margin-top: 3px;
 }
 
+#showItem {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 10vw;
+  height: 10vw;
+  background-color: #32373c;
+}
+
+.itemNamecommon {
+}
+
+.itemNamerare {
+  color: #4AC8FF;
+}
+
+.itemNamelegendary {
+  color: #FFC500;
+}
+
+.openBtn {
+  background-color: transparent;
+  color: #fff;
+  padding: 12px;
+  font-size: 28px;
+  border-radius: 3px;
+  border: 1px solid #4AC8FF;
+}
+
+.openBtn:hover {
+  
+  color: #fff;
+  padding: 12px;
+  font-size: 28px;
+  border-radius: 3px;
+  text-decoration: none;
+  background-color: #4AC8FF;
+}
+
 .itemImgcommon {
   margin-top: 15px;
   border-radius: 2px;
   width: 100px;
   height: 100px;
-  border-bottom: 3px solid white;
+  border-bottom: 3px solid #FFFFFF;
+
 }
 
 .itemImgrare {
@@ -1029,7 +1074,7 @@ body{
   border-radius: 2px;
   width: 100px;
   height: 100px;
-  border-bottom: 3px solid blue;
+  border-bottom: 3px solid #4AC8FF;
 }
 
 .itemImglegendary {
@@ -1037,7 +1082,7 @@ body{
   border-radius: 2px;
   width: 100px;
   height: 100px;
-  border-bottom: 3px solid orange;
+  border-bottom: 3px solid #FFC500;
 }
 
 .itemName {
@@ -1252,30 +1297,6 @@ body{
  height: 260px;
  background-color: #32373c ;
  margin-top: 3px;
-}
-
-.itemImgcommon {
- margin-top: 15px;
- border-radius: 2px;
- width: 100px;
- height: 100px;
- border-bottom: 3px solid white;
-}
-
-.itemImgrare {
- margin-top: 15px;
- border-radius: 2px;
- width: 100px;
- height: 100px;
- border-bottom: 3px solid blue;
-}
-
-.itemImglegendary {
- margin-top: 15px;
- border-radius: 2px;
- width: 100px;
- height: 100px;
- border-bottom: 3px solid orange;
 }
 
 .itemName {

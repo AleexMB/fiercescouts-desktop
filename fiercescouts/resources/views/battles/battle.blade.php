@@ -12,7 +12,7 @@
         <div class="col-md-3 col-lg-3 firstCharacter nopaddingleft nopaddingright">
           <h1 class="userNameBattle text-center">{{ $character->name }}</h1>
           <p class="levelUser text-center">level: {{ $character->level }}</p>
-          <div id ="userOneImage">
+          <div id ="userOneImage" data-charactergender="{{ $character->gender }}" data-characterclass="{{ $character->class }}">
           </div>
           <div class="containerSkills text-center">
             <h1>class: {{ $character->class }}</h1>
@@ -34,8 +34,6 @@
               </div>
             </div>
             <div class="skillsContainer">
-              <!-- <div class="potions" id="potionUserOne">
-              </div> -->
               <div class="weaponLeft" id="weaponLeftUserOne">
               </div>
               <div class="weaponRight" id="weaponRightUserOne">
@@ -52,7 +50,7 @@
         <div class="col-md-offset-1 col-md-3 col-lg-offset-1 col-lg-3 secondCharacter nopaddingleft nopaddingright">
           <h1 class="userNameBattle text-center">{{ $opponent->name }}</h1>
           <p class="levelUser text-center">level: {{ $opponent->level }}</p>
-          <div id="userTwoImage">
+          <div id="userTwoImage" data-opponentgender="{{ $opponent->gender }}" data-opponentclass="{{ $opponent->class }}">
           </div>
           <div class="containerSkills text-center">
             <h1>class: {{ $opponent->class }}</h1>
@@ -72,8 +70,6 @@
               </div>
             </div>
             <div class="skillsContainer">
-              <!-- <div class="potions" id="potionUserTwo">
-              </div> -->
               <div class="weaponLeft" id="weaponLeftUserTwo">
               </div>
               <div class="weaponRight" id="weaponRightUserTwo">
@@ -87,6 +83,7 @@
       </div>
     </div>
   </div>
-  <script src="{{ asset('js/battleRenderer.js') }}"></script>
+  <script src="{{ asset('js/profileImageBattle.js') }}"></script>
+  <script src="{{ asset('js/battleRenderer.js') }}"></script>  
 </body>
 @endsection

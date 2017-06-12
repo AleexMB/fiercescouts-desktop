@@ -7,6 +7,7 @@ use DB;
 use fiercescouts\Character;
 use fiercescouts\Item;
 use Auth;
+use URL;
 
 class ItemController extends Controller
 {
@@ -39,7 +40,8 @@ class ItemController extends Controller
 	 */
 	public function create()
 	{
-		return view("items.create");
+		$character = Character::all()->where('user_id', Auth::id())->first();
+		return view("items.create")->with('character', $character);
 	}
 
 	/**
@@ -81,7 +83,7 @@ class ItemController extends Controller
 					$item->character_id = DB::table('characters')->where('user_id', Auth::id())->value('id');
 
 					$item->save();
-					return redirect('items');
+					return redirect(URL::to('items/' . $item->id));
 				} else {
 					return redirect('home');
 				}
@@ -98,7 +100,8 @@ class ItemController extends Controller
 	 */
 	public function show($id)
 	{
-		//
+		$item = Item::find($id);
+		return view('items.show')->with('item', $item);
 	}
 
 	/**

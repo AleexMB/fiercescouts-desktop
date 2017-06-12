@@ -5,12 +5,17 @@
   <div class="row">
     <div class="col-md-offset-3 col-md-6">
       <div class="containerUserChest">
-        <p class="chestNumber">PROVA</p>
+        <p class="chestNumber">CHESTS TO OPEN: {{ $character->chests }}</p>
         <p class="infoChest">Click the coffer to reveal your new items</p>
         <div class="chestContainer">
-          <div class="imageChest">
-          </div>
+
+          <!-- <div class="imageChest"> -->
+          {{ Form::open(array('url' => 'items')) }}
+            {{ Form::submit('', array('class' => 'imageChest')) }}
+          {{ Form::close() }}
+          <!-- </div> -->
         </div>
+
       </div>
     </div>
   </div>
