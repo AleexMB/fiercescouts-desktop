@@ -27,6 +27,11 @@ class ItemController extends Controller
 	{
 		//$items = Item::all()->where('character_id')belongsTo(Auth::Id());
 		$character = Character::all()->where('user_id', Auth::id())->first();
+
+		if (!$character) {
+			return view("characters.create");
+		}
+
 		$items = Item::all()->sortByDesc('itemlv')->where('character_id', $character->id);
 		
         return view("items.index")->with('items', $items);
@@ -41,6 +46,11 @@ class ItemController extends Controller
 	public function create()
 	{
 		$character = Character::all()->where('user_id', Auth::id())->first();
+		
+		if (!$character) {
+			return view("characters.create");
+		}
+
 		return view("items.create")->with('character', $character);
 	}
 

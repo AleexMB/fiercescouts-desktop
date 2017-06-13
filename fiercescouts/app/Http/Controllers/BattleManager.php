@@ -9,6 +9,7 @@ use fiercescouts\Item;
 use Redirect;
 use Auth;
 use DB;
+use URL;
 
 class BattleManager extends Controller
 {
@@ -19,14 +20,23 @@ class BattleManager extends Controller
 	}
 
     public function battleStart() {
+        $check = Character::all()->where('user_id', Auth::id())->first();
+
+        if(!$check) {
+            return redirect(URL::to('characters/create'));
+        }
+
     	$character = DB::table('characters')->where('user_id', Auth::id())->take(1)->get();
     	$level = DB::table('characters')->where('user_id', Auth::id())->value('level');
     	$id = DB::table('characters')->where('user_id', Auth::id())->value('id');
 		//$opponent = DB::table('characters')->orderBy()->where('level', $level)->take(1)->get();
 
 
-    	//guardare condizione nel where
-        $opponent = Character::inRandomOrder()->where('user_id', '!=', Auth::id())->where('level', $level)->orWhere('level', $level + 1)->orWhere('level', $level - 1)->firstOrFail();
+        $opponent = Character::inRandomOrder()->where('user_id', '!=', Auth::id())->where('level', $level)->orWhere('level', $level + 1)->orWhere('level', $level - 1)->first();
+
+        if(!$opponent) {
+            $opponent = Character::inRandomOrder()->where('user_id', '!=', Auth::id())->firstOrFail();
+        }
 
 
         $characterID = $id;
@@ -39,10 +49,20 @@ class BattleManager extends Controller
         $characterToPass = Character::where('id', $characterID)->firstOrFail();
         $opponentToPass = Character::where('id', $opponentID)->firstOrFail();
 
+        $cWL = Item::where('id', $characterToPass->weapon_left)->value('img');
+        $cWR = Item::where('id', $characterToPass->weapon_right)->value('img');
+
+        $oWL = Item::where('id', $opponentToPass->weapon_left)->value('img');
+        $oWR = Item::where('id', $opponentToPass->weapon_right)->value('img');
+
     	return view("battles.battle")
             ->with('jsonData', $jsonData)
 	     	->with('character', $characterToPass)
-	    	->with('opponent', $opponentToPass);
+	    	->with('opponent', $opponentToPass)
+            ->with('cWL', $cWL)
+            ->with('cWR', $cWR)
+            ->with('oWL', $oWL)
+            ->with('oWR', $oWR);
     }
 
     public function battleResolve($characterID, $opponentID) {

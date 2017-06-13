@@ -28,10 +28,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $character = Character::all()->where('user_id', Auth::id());
+        $character = Character::all()->where('user_id', Auth::id())->first();
         if ($character) {
             $character = Character::all()->where('user_id', Auth::id())->first();
             return redirect(URL::to('characters/' . $character->id));
+        } else {
+            return redirect(URL::to('characters/create'));
         }
 
     //return 'test';

@@ -15,7 +15,7 @@
           <p>LEVEL: {{ $character->level }}</p>
         </div>
         <div class="col-md-4 points" id="matchWinProfile">
-          <p>WINMATCH: {{ $character->victory_points }}</p>
+          <p>VICTORY POINTS: {{ $character->victory_points }}</p>
         </div>
       </div>
       <div class="col-md-12">

@@ -34,12 +34,35 @@
               </div>
             </div>
             <div class="skillsContainer">
+              <div class="skill" id="skillUserOne">
+                <style>
+                  #skillUserOne {
+                    background-image: url({{ URL::asset('/images/skills/' . $character->skill . '.png') }});
+                    background-size: cover;
+                  }
+                </style>
+              </div>
               <div class="weaponLeft" id="weaponLeftUserOne">
+                @if ($character->weapon_left)
+                  <style>
+                    #weaponLeftUserOne {
+                      background-image: url({{ URL::asset('/images/items/' . $cWL . '.png') }});
+                      background-size: cover;
+                    }
+                  </style>
+                @endif
               </div>
               <div class="weaponRight" id="weaponRightUserOne">
+                @if ($character->weapon_right)
+                  <style>
+                    #weaponRightUserOne {
+                      background-image: url({{ URL::asset('/images/items/' . $cWR . '.png') }});
+                      background-size: cover;
+                    }
+                  </style>
+                @endif
               </div>
-              <div class="skill" id="skillUserOne">
-              </div>
+              
             </div>
           </div>
         </div>
@@ -70,12 +93,35 @@
               </div>
             </div>
             <div class="skillsContainer">
+              <div class="skill" id="skillUserTwo">
+                <style>
+                  #skillUserTwo {
+                    background-image: url({{ URL::asset('/images/skills/' . $opponent->skill . '.png') }});
+                    background-size: cover;
+                  }
+                </style>
+              </div>
               <div class="weaponLeft" id="weaponLeftUserTwo">
+                @if ($opponent->weapon_left)
+                  <style>
+                    #weaponLeftUserTwo {
+                      background-image: url({{ URL::asset('/images/items/' . $oWL . '.png') }});
+                      background-size: cover;
+                    }
+                  </style>
+                @endif
               </div>
               <div class="weaponRight" id="weaponRightUserTwo">
+                @if ($opponent->weapon_right)
+                  <style>
+                    #weaponRightUserTwo {
+                      background-image: url({{ URL::asset('/images/items/' . $oWR . '.png') }});
+                      background-size: cover;
+                    }
+                  </style>
+                @endif
               </div>
-              <div class="skill" id="skillUserTwo">
-              </div>
+              
             </div>
           </div>
         </div>

@@ -884,7 +884,7 @@ body{
     background-image: url('');
     background-size: 80%;
     background-position: center;
-      background-repeat: no-repeat;
+    background-repeat: no-repeat;
     height: 30vh;
     z-index: 2;
     position: relative;
@@ -894,10 +894,17 @@ body{
     background-image: url('');
     background-size: 80%;
     background-position: center;
-      background-repeat: no-repeat;
+    background-repeat: no-repeat;
     height: 30vh;
     z-index: 2;
     position: relative;
+
+    -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
   }
 
   .containerSkills{
@@ -1449,4 +1456,13 @@ body{
 
 .nameCreate {
   background-color: #282E34;
+}
+
+.linkNoStyle, .linkNoStyle:hover {
+ color: #fff;
+ text-decoration: none;
+}
+
+#weaponLeftUserOne, #weaponRightUserOne, #weaponLeftUserTwo, #weaponRightUserTwo {
+  border-radius: 0px;
 }

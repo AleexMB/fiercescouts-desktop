@@ -33,7 +33,7 @@
           
          <tr>
              <td>{{ $i }}</td>
-             <td>{{ $value->name }}</td>
+             <td><a class="linkNoStyle" href="{{ URL::to('characters/' . $value->id) }}">{{ $value->name }}</a></td>
              <td class="laddersY">{{ $value->level }}</td>
              <td class="laddersG">{{ $value->battle_won }}</td>
              <td class="laddersR">{{ $value->battle_lost }}</td>
