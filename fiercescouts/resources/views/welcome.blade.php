@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Fierce Scouts</title>
+        <title>Fiercescouts</title>
 
         <!-- <link rel="stylesheet" href="/css/base.css"> -->
 
@@ -78,10 +78,16 @@
               background: -o-linear-gradient(-90deg, #21282E, #32373C); /* For Opera 11.1 to 12.0 */
               background: -moz-linear-gradient(-90deg, #21282E, #32373C); /* For Firefox 3.6 to 15 */
             }
+
+            .splashImg {
+                position: fixed;
+                width: 100%;
+            }
         </style>
     </head>
     <body>
       <div class="bg">
+        <img class="splashImg" src="{{URL::asset('/images/splash.jpg')}}" alt="character">
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -94,9 +100,12 @@
                 </div>
             @endif
             <div class="content">
-              <div class="title m-b-md">
-                Fierce <br> Scouts
-              </div>
+                <div class="col-lg-6">
+                    
+                </div>
+                <div class="title m-b-md col-lg-6">
+                    Fierce <br> Scouts
+                </div>
             </div>
         </div>
       </div>

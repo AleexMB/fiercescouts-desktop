@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Fiercescouts') }}</title>
+    <title>Fiercescouts</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -16,6 +16,7 @@
 
 
     <!-- Scripts -->
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 </head>
 <body>
     <div id="app">

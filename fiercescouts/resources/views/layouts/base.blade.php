@@ -7,7 +7,7 @@
 
     <!-- CSRF Token -->
 
-    <title>{{ config('app.name', 'Fiercescouts') }}</title>
+    <title>Fiercescouts</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -17,6 +17,7 @@
 
 
     <!-- Scripts -->
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 </head>
 <body>
   <div class="navbarContainer">
