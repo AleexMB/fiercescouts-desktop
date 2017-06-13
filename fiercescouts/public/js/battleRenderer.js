@@ -16,6 +16,7 @@ $(function() {
 	// }
 
 	var i = 0;
+	var colorText = 1;
 
 	function manageTurn() {
 		var targetUserId = battleData[i].offender;
@@ -24,6 +25,15 @@ $(function() {
 		var targetOpponentHP = battleData[i].defenderHP;
 
 		var turnDescription = battleData[i].desc;
+
+		if (colorText % 2 != 0) {
+			$("#logBox").append("<p class=\"battleLogText logTextG\">" + turnDescription + "</p");
+		} else {
+			$("#logBox").append("<p class=\"battleLogText logTextR\">" + turnDescription + "</p");
+		}
+
+		colorText++;
+		console.log(colorText);
 
 		// COMBAT LOG
 		//$("#logBox").append("<div>" + turnDescription + "</div");

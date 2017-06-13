@@ -13,7 +13,7 @@ CHOOSE YOUR CHARACTER AND START THE ADVENTURE</p>
    <div class="row">
 	   {{ Form::open(array('url' => 'characters')) }}
 	   <div class="form-group nameBox col-md-4 col-md-offset-4">
-		    {{ Form::text('name', null, array('class' => 'form-control  ', 'placeholder' => 'name' )) }}
+		    {{ Form::text('name', null, array('class' => 'form-control nameCreate', 'placeholder' => 'name' )) }}
 	   </div>
   </div>
   <div class="">

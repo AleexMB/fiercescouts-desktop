@@ -117,7 +117,12 @@ class BattleManager extends Controller
     	while (($characterHP > 0) && ($opponentHP > 0)) {
 
             if ($turn % 2 != 0) {
-        		$opponentHP -= ($characterPA) - ($opponentPD);
+                if ($opponentPD < $characterPA) {
+        		  $opponentHP -= ($characterPA) - ($opponentPD);
+                  $damage = ($characterPA) - ($opponentPD);
+                } else {
+                    $damage = 0;
+                }
 
                 if ($characterHP >= $characterMaxHP) {
                     $characterHP = $characterMaxHP;
@@ -127,22 +132,27 @@ class BattleManager extends Controller
                     $opponentHP = $opponentMaxHP;
                 }
 
-                $characterRecord = array("desc" => $character->name . " attacked with weapons and did " . ($characterPA - $opponentPD) . " damage to " . $opponent->name . ". " . $opponent->name . " has " . $opponentHP . " HP left.",
+                $characterRecord = array("desc" => $character->name . " attacked with weapons and did " . ($damage) . " damage to " . $opponent->name . ". " . $opponent->name . " has " . $opponentHP . " HP left.",
                     "offender" => $character->id,
                     "defender" => $opponent->id,
                     "offenderHP" => $characterHP,
                     "defenderHP" => $opponentHP,
-                    "offenderPA" => $characterPA,
-                    "defenderPA" => $opponentPA,
-                    "offenderMA" => $characterMA,
-                    "defenderMA" => $opponentMA,
-                    "offenderPD" => $characterPD,
-                    "defenderPD" => $opponentPD,
-                    "offenderMD" => $characterMD,
-                    "defenderMD" => $opponentMD,
+                    // "offenderPA" => $characterPA,
+                    // "defenderPA" => $opponentPA,
+                    // "offenderMA" => $characterMA,
+                    // "defenderMA" => $opponentMA,
+                    // "offenderPD" => $characterPD,
+                    // "defenderPD" => $opponentPD,
+                    // "offenderMD" => $characterMD,
+                    // "defenderMD" => $opponentMD,
                     );
 
-                $characterHP -= ($opponentPA) - ($characterPD);
+                if ($characterPD < $opponentPA) {
+                    $characterHP -= ($opponentPA) - ($characterPD);
+                    $damage = ($opponentPA) - ($characterPD);
+                } else {
+                    $damage = 0;
+                }
 
                 if ($characterHP >= $characterMaxHP) {
                     $characterHP = $characterMaxHP;
@@ -152,19 +162,19 @@ class BattleManager extends Controller
                     $opponentHP = $opponentMaxHP;
                 }
 
-                $opponentRecord = array("desc" => $opponent->name . " attacked with weapons and did " . ($opponentPA - $characterPD) . " damage to " . $character->name . ". " . $character->name . " has " . $characterHP . " HP left.",
+                $opponentRecord = array("desc" => $opponent->name . " attacked with weapons and did " . ($damage) . " damage to " . $character->name . ". " . $character->name . " has " . $characterHP . " HP left.",
                     "offender" => $opponent->id,
                     "defender" => $character->id,
                     "offenderHP" => $opponentHP,
                     "defenderHP" => $characterHP,
-                    "offenderPA" => $opponentPA,
-                    "defenderPA" => $characterPA,
-                    "offenderMA" => $opponentMA,
-                    "defenderMA" => $characterMA,
-                    "offenderPD" => $opponentPD,
-                    "defenderPD" => $characterPD,
-                    "offenderMD" => $opponentMD,
-                    "defenderMD" => $characterMD,
+                    // "offenderPA" => $opponentPA,
+                    // "defenderPA" => $characterPA,
+                    // "offenderMA" => $opponentMA,
+                    // "defenderMA" => $characterMA,
+                    // "offenderPD" => $opponentPD,
+                    // "defenderPD" => $characterPD,
+                    // "offenderMD" => $opponentMD,
+                    // "defenderMD" => $characterMD,
                     );
                 
             } else {
@@ -212,7 +222,12 @@ class BattleManager extends Controller
                         $opponentHP = $opponentMaxHP;
                     }
 
-                    $characterRecord = $character->name . " used " . $skill->name . ". " . $opponent->name . " has " . $opponentHP . " HP left.";
+                    $characterRecord = array("desc" => $character->name . " used " . $skill->name . ". " . $opponent->name . " has " . $opponentHP . " HP left.",
+                        "offender" => $opponent->id,
+                        "defender" => $character->id,
+                        "offenderHP" => $opponentHP,
+                        "defenderHP" => $characterHP,
+                        );
 
                 } else {
                     // SE NON HA SKILL EQUIPAGGIATA
@@ -227,7 +242,12 @@ class BattleManager extends Controller
                         $opponentHP = $opponentMaxHP;
                     }
 
-                    $characterRecord = $character->name . " attacked with weapons and did " . ($characterPA - $opponentPD) . " damage to " . $opponent->name . ". " . $opponent->name . " has " . $opponentHP . " HP left.";
+                    $characterRecord = array("desc" => $character->name . " attacked with weapons and did " . ($characterPA - $opponentPD) . " damage to " . $opponent->name . ". " . $opponent->name . " has " . $opponentHP . " HP left.",
+                        "offender" => $opponent->id,
+                        "defender" => $character->id,
+                        "offenderHP" => $opponentHP,
+                        "defenderHP" => $characterHP,
+                    );
                 }
 
                 //AVVERSARIO USA SKILL
@@ -273,7 +293,12 @@ class BattleManager extends Controller
                         $opponentHP = $opponentMaxHP;
                     }
 
-                    $opponentRecord = $opponent->name . " used " . $skill->name . ". " .  $character->name . " has " . $characterHP . " HP left.";
+                    $opponentRecord = array("desc" => $opponent->name . " used " . $skill->name . ". " .  $character->name . " has " . $characterHP . " HP left.",
+                        "offender" => $opponent->id,
+                        "defender" => $character->id,
+                        "offenderHP" => $opponentHP,
+                        "defenderHP" => $characterHP,
+                    );
 
                 } else {
 
@@ -288,7 +313,12 @@ class BattleManager extends Controller
                         $opponentHP = $opponentMaxHP;
                     }
 
-                    $opponentRecord = $opponent->name . " attacked with weapons and did " . ($opponentPA - $characterPD) . " damage to " . $character->name . ". " . $character->name . " has " . $characterHP . " HP left.";
+                    $opponentRecord = array("desc" => $opponent->name . " attacked with weapons and did " . ($opponentPA - $characterPD) . " damage to " . $character->name . ". " . $character->name . " has " . $characterHP . " HP left.",
+                        "offender" => $opponent->id,
+                        "defender" => $character->id,
+                        "offenderHP" => $opponentHP,
+                        "defenderHP" => $characterHP,
+                    );
                 }
             }
 
@@ -310,7 +340,7 @@ class BattleManager extends Controller
                 $opponent->save();
                 }
 
-                $characterRecord = $character->name . " WON. " . $opponent->name . " LOST.";
+                $characterRecord = array("desc" => $character->name . " WON. " . $opponent->name . " LOST.");
                 $opponentRecord = null;
                 $battleRecords[] = $characterRecord;
 
@@ -328,7 +358,7 @@ class BattleManager extends Controller
                 $opponent->battle_won++;
                 $opponent->save();
 
-                $opponentRecord = $opponent->name . " WON. " . $character->name . " LOST.";
+                $opponentRecord = array("desc" => $opponent->name . " WON. " . $character->name . " LOST.");
                 $characterRecord = null;
                 $battleRecords[] = $opponentRecord;
             }

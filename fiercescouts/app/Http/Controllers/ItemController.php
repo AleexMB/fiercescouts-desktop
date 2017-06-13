@@ -53,7 +53,7 @@ class ItemController extends Controller
 	public function store(Request $request)
 	{
 		$chestsToOpen = DB::table('characters')->where('user_id', Auth::id())->value('chests');
-			if ($chestsToOpen == 0){
+			if ($chestsToOpen > 0){
 				$item = new Item;
 				$item->rarity = GameManager::assignRarity();
 				if ($item->rarity == "legendary") {
@@ -83,6 +83,8 @@ class ItemController extends Controller
 					$item->character_id = DB::table('characters')->where('user_id', Auth::id())->value('id');
 
 					$item->save();
+					$character->chests--;
+					$character->save();
 					return redirect(URL::to('items/' . $item->id));
 				} else {
 					return redirect('home');

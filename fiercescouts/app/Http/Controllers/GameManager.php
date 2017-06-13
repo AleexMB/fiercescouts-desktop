@@ -91,19 +91,19 @@ class GameManager extends Controller
     //METODO PER ASSEGNARE LE STAT AD ITEM
     public static function assignItemStats($level, $rarity) {
         if ($rarity == "common") {
-            $hp = (rand(5, 8) + rand($level, $level + 5));
+            $hp = 0; //(rand(5, 8) + rand($level, $level + 5));
             $p_attack = (rand(2, 3) + rand($level, $level + 3));
             $m_attack = (rand(2, 3) + rand($level, $level + 3));
             $p_defence = (rand(1, 2) + rand($level, $level + 2));
             $m_defence = (rand(1, 2) + rand($level, $level + 2));
         } else if ($rarity == "rare") {
-            $hp = (rand(8, 16) + rand($level, $level + 6));
+            $hp = 0; //(rand(8, 16) + rand($level, $level + 6));
             $p_attack = (rand(3, 6) + rand($level, $level + 8));
             $m_attack = (rand(3, 6) + rand($level, $level + 8));
             $p_defence = (rand(2, 3) + rand($level, $level + 3));
             $m_defence = (rand(2, 3) + rand($level, $level + 3));
         } else {
-            $hp = (rand(20, 26) + rand($level, $level + 16));
+            $hp = 0; //(rand(20, 26) + rand($level, $level + 16));
             $p_attack = (rand(6, 10) + rand($level, $level + 16));
             $m_attack = (rand(6, 10) + rand($level, $level + 16));
             $p_defence = (rand(4, 6) + rand($level, $level + 8));

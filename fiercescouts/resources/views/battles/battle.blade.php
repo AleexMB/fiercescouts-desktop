@@ -3,9 +3,9 @@
 
 <body>
   <div class="container-fluid nopaddingleft nopaddingright">
-    <div id="resultBox" class="col-md-1 col-lg-10 col-md-offset-1 col-lg-offset-1">
+    <!-- <div id="resultBox" class="col-md-1 col-lg-10 col-md-offset-1 col-lg-offset-1">
       YOU WON!
-    </div>
+    </div> -->
     <div class="col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 nopaddingleft nopaddingright">
       <div class="row">
       <script type="text/javascript"> var battleData = <?php echo($jsonData); ?>;</script>
@@ -20,7 +20,7 @@
               <div id="lifePointsUserOne" data-uid="{{ $character->id }}" data-maxhp="{{ $character->hp }}">
               </div>
             </div>
-            <p class="hpUser">HP: <span id="userHP" data-uid="{{ $character->id }}"> {{ $character->hp }} </span> / {{ $character->hp }}</p>
+            <p class="hpUser">HP: <span id="userHP" data-uid="{{ $character->id }}"> {{ $character->hp }} </span></p>
             <div class="atkContainer">
               <div class="centererValue">
                 <div class="atk">
@@ -45,7 +45,7 @@
         </div>
         <div id="logBox" class="col-md-offset-1 col-md-4 display nopaddingright nopaddingleft">
 
-          <h1 class="titleBattle text-center">BATTLE MODE</h1>
+          <!-- <h1 class="titleBattle text-center">BATTLE MODE</h1> -->
         </div>
         <div class="col-md-offset-1 col-md-3 col-lg-offset-1 col-lg-3 secondCharacter nopaddingleft nopaddingright">
           <h1 class="userNameBattle text-center">{{ $opponent->name }}</h1>
@@ -58,7 +58,7 @@
               <div id="lifePointsUserTwo" data-uid="{{ $opponent->id }}" data-maxhp="{{ $opponent->hp }}">
               </div>
             </div>
-            <p class="hpUser">HP:  / {{ $opponent->hp }}</p>
+            <p class="hpUser">HP: {{ $opponent->hp }}</p>
             <div class="atkContainer text-center">
               <div class="atk">
                 <p>PATK: {{ $opponent->p_attack }}</p>
