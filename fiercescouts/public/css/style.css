@@ -32,16 +32,95 @@ body{
 	overflow: hidden;
 }
 
-	/*login*/
-#boxLogin{
-  background-color: #21282E;
+
+.boxReg{
+  background-color: #282E34;
   border: none;
-  text-align: center;
-  margin-top: 5vh;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  width: 50vw;
+  height: 60vh;
+  margin: auto;
+  align-items: center;
 }
+
+.regForm{
+  margin-top: 30px;
+}
+
+.registerTitle{
+  color: #fff;
+  font-family: 'trump_gothic_west';
+  font-size: 24pt;
+  text-align: left;
+}
+
+#nameReg{
+    background-color: #21282E;
+    color: #fff;
+    font-family: m'maisonneuebook' ;
+}
+
+
+
+#mailReg{
+    margin-top: 20px;
+    background-color: #21282E;
+    color: #fff;
+    font-family: m'maisonneuebook' ;
+}
+
+#password-confirm{
+    margin-top: 20px;
+    background-color: #21282E;
+    color: #fff;
+    font-family: m'maisonneuebook' ;
+}
+
+#pswReg{
+    margin-top: 20px;
+    background-color: #21282E;
+    color: #fff;
+    font-family: m'maisonneuebook' ;
+}
+
+
+
+	/*login*/
+
+
+#panelProfile{
+  background-color: #282E34;
+  margin-top: 12vh;
+  border: none;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.formLogin{
+  margin-top: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.form-horizontal{
+  margin-top: 20px !important;
+}
+
+
+.boxLogin{
+  background-color:s #282E34;
+  color: #fff;
+  font-family: 'trump_gothic_west';
+  font-size: 24pt;
+}
+
 
 .checkbox{
   float: left;
+}
+
+.loginLabel{
+  color: #fff;
+  opacity: 0.6;
+  font-size: 'maisonneuebook';
 }
 
 
@@ -60,6 +139,13 @@ body{
   margin: 0px;
 }
 
+.btnLogin{
+  font-family: 'trump_gothic_west';
+  font-size: 16pt;
+  padding: 0px 40px;
+  background-color: #4AC8FF;
+}
+
 .confirmLoginBtn:hover{
   	transform: scale(1.1);
     background-color: transparent;
@@ -69,23 +155,8 @@ body{
   background-color: #21282E;
   box-shadow: 0 0px 0px rgba(0, 0, 0, 0.0);
   color: #fff;
-  height: 60px;
-  border-radius: 0px;
-  padding: 0px 30px;
-  font-family: 'trump_gothic_west';
-  font-size: 36pt;
-
-}
-
-#email::-webkit-input-placeholder{
-  font-family: 'trump_gothic_west';
-  font-size: 40pt;
-  opacity: 0.5;
-}
-
-#email input[type=text]{
-  font-family: 'trump_gothic_west';
-  font-size: 40pt;
+  font-family: 'maisonneuebook';
+  font-size: 12pt;
 }
 
 
@@ -93,20 +164,12 @@ body{
   background-color: #21282E;
   box-shadow: 0 0px 0px rgba(0, 0, 0, 0.0);
   color: #fff;
-  height: 60px;
-  font-family: 'trump_gothic_west';
-  font-size: 40pt;
-  border-radius: 0px;
-  padding: 0px 30px;
-  margin-top: 5vh;
+  font-family: 'maisonneuebook';
+  font-size: 12pt;
+  margin-top: 1vh;
 
 }
 
-#password::-webkit-input-placeholder{
-  font-family: 'trump_gothic_west';
-  font-size: 40pt;
-  opacity: 0.5;
-}
 
 .checkRememberLogin{
   color: #fff;
@@ -428,13 +491,6 @@ body{
 }
 
 
-.registerForm {
-	width: 550px;
-	height: 380px;
-	margin: auto;
-	align-items: center;
-}
-
 .form-horizontal{
 	margin-top: 45px;
 }
@@ -451,7 +507,7 @@ body{
 
 .navbar-brand:hover{
 	transform: scale(1.1);
-  color: #fff;
+  color: #fff !important;
 }
 
 .navbar-default .navbar-nav>li>a, .navbar-default .navbar-text{
@@ -464,8 +520,21 @@ body{
 
 .navbar-right{
 	margin-top: 30px;
-	font-family: 'trump_gothic_west';
+	font-family: 'maisonneuebook';
 	color: #fff;
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+
+.loginRegister a:hover{
+	font-family: 'maisonneuebook';
+	color: #fff !important;
+
+}
+
+
+.navbar-right a: hover{
+  transform: scale(1.1);
 }
 
 .chooseCharacterTitle{
@@ -670,7 +739,7 @@ body{
     padding: 12px 20px;
     box-sizing: border-box;
     border: none;
-    background-color: #282E34;
+    background-color: #fff;
     color: white;
     font-family: 'maisonneuebook';
     outline: none;
@@ -703,6 +772,10 @@ body{
 	background: transparent;
 	border: none;
 	height: 100px;
+}
+
+.fiercescoutLogo:hover{
+  color:#fff;
 }
 
 .navbarHeight{
@@ -739,6 +812,10 @@ body{
 	background-color: #4AC8FF;
 	border: none;
 	border-radius: 2px;
+  font-family: 'trump_gothic_west';
+  font-size: 16pt;
+  padding: 0px 40px;
+  margin-top: 40px;
 }
 
 
@@ -1051,7 +1128,7 @@ body{
 }
 
 .openBtn:hover {
-  
+
   color: #fff;
   padding: 12px;
   font-size: 28px;

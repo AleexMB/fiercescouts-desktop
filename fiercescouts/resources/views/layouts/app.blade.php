@@ -11,6 +11,7 @@
     <title>{{ config('app.name', 'Fiercescouts') }}</title>
 
     <!-- Styles -->
+    
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
@@ -25,7 +26,7 @@
                     <!-- Branding Image -->
                     <div class="logoArea">
                     </div>
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand"  href="{{ url('/') }}">
                         FirceScouts
                     </a>
                 </div>
