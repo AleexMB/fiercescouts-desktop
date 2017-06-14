@@ -143,7 +143,7 @@ class GameManager extends Controller
 
     //METODO PER LEVEL UP
     public static function levelUp($level, $exp) {
-        if ($level <= 5) {
+        if ($level <= 10) {
         	switch ($level) {
         		case 1:
         			if ($exp >= 20) {
@@ -169,6 +169,36 @@ class GameManager extends Controller
         				return $updatedStats;
         			}
         			break;
+                case 5:
+                    if ($exp >= 120) {
+                            $updatedStats = GameManager::assignLevelUpStats($level);
+                            return $updatedStats;
+                        }
+                        break;
+                case 6:
+                    if ($exp >= 160) {
+                        $updatedStats = GameManager::assignLevelUpStats($level);
+                        return $updatedStats;
+                    }
+                    break;
+                case 7:
+                    if ($exp >= 210) {
+                        $updatedStats = GameManager::assignLevelUpStats($level);
+                        return $updatedStats;
+                    }
+                    break;
+                case 8:
+                    if ($exp >= 280) {
+                        $updatedStats = GameManager::assignLevelUpStats($level);
+                        return $updatedStats;
+                    }
+                    break;
+                case 9:
+                    if ($exp >= 350) {
+                        $updatedStats = GameManager::assignLevelUpStats($level);
+                        return $updatedStats;
+                    }
+                    break;
         	}
         }
     }

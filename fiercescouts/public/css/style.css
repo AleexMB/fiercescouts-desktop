@@ -1466,3 +1466,14 @@ body{
 #weaponLeftUserOne, #weaponRightUserOne, #weaponLeftUserTwo, #weaponRightUserTwo {
   border-radius: 0px;
 }
+
+.error404 {
+  padding-top: 20vh;
+  color: #fff;
+  font-size: 100px;
+}
+
+.errorText {
+  color: #fff;
+  font-size: 30px;
+}

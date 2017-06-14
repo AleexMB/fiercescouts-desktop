@@ -11,9 +11,9 @@ class NameGenerator extends Controller
 		$randOne = rand(1, 9);
 		$randTwo = rand(1, 12);
 
-		$listOne = ["Dagger", "Sword", "Staff", "Scythe", "Blade", "Claw", "Bow", "Longsword", "Axe"];
+		$listOne = ["Dagger", "Sword", "Staff", "Scythe", "Blade", "Claw", "Longsword", "Axe"];
 
-		$listTwo = [" of agility", " of pain", " of the fallen", " of death", " of the protector", " of darkness", " of might", " of cruelty", " of the warrior", " of holiness", " of the guardian", " of spirit"];
+		$listTwo = [" of agility", " of pain", " of the fallen", " of death", " of the protector", " of darkness", " of might", " of cruelty", " of the warrior", " of holiness", " of the guardian", " of spirit", " of the titan", " of the assassin"];
 
 		$finalName = $listOne[$randOne - 1] . $listTwo[$randTwo - 1];
 		return $finalName;

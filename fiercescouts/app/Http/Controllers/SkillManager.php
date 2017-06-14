@@ -34,6 +34,10 @@ class SkillManager extends Controller
     		case "Smite":
     			$battleStats['oPD'] -= 1;
     			break;
+            //EXTRA SKILLS
+            case "Apocalypse":
+                $battleStats['oPD'] -= 1;
+                break;
     	}
 
     	return $battleStats;

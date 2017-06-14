@@ -128,5 +128,14 @@ class SkillsTableSeeder extends Seeder
             'unlocks_at' => 4,
             'class' => 'monk',
         ]);
+
+        //EXTRA SKILLS
+
+        DB::table('skills')->insert([
+            'name' => 'Apocalypse',
+            'description' => '',
+            'unlocks_at' => 10,
+            'class' => 'mage',
+        ]);
     }
 }

@@ -87,7 +87,7 @@
     </head>
     <body>
       <div class="bg">
-        <img class="splashImg" src="{{URL::asset('/images/splash.jpg')}}" alt="character">
+<!--         <img class="splashImg" src="{{URL::asset('/images/splash.jpg')}}" alt="character"> -->
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">

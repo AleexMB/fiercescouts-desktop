@@ -6,7 +6,7 @@
     <div class="col-md-offset-3 col-md-6">
       <div class="containerUserChest">
         <p class="chestNumber">CHESTS TO OPEN: {{ $character->chests }}</p>
-        <p class="infoChest">Click the coffer to reveal your new items</p>
+        <p class="infoChest">Click the coffer to reveal your new item</p>
         <div class="chestContainer">
 
           <!-- <div class="imageChest"> -->
