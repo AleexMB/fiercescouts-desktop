@@ -5,6 +5,7 @@ namespace fiercescouts\Http\Controllers;
 use Illuminate\Http\Request;
 use fiercescouts\Character;
 use fiercescouts\Item;
+use Illuminate\Support\Facades\Validator;
 use Auth;
 
 class CharacterController extends Controller
@@ -19,6 +20,10 @@ class CharacterController extends Controller
 	{
 		$this->middleware('auth');
 		$this->middleware('checkDevice');
+
+		Validator::extend('without_spaces', function($attr, $value){
+    		return preg_match('/^\S*$/u', $value);
+		});
 	}
 
 	public function index()
@@ -42,6 +47,12 @@ class CharacterController extends Controller
 		}
 	}
 
+	// protected function validator(array $data) {
+	// 	return Validator::make($data, [
+	//         'name' => 'required|string|required|without_spaces|max:12',
+	//     ]);
+	// }
+
 	/**
 	 * Store a newly created resource in storage.
 	 *
@@ -49,7 +60,19 @@ class CharacterController extends Controller
 	 * @return \Illuminate\Http\Response
 	 */
 	public function store(Request $request)
-	{
+	{	
+		if (!$request->input('name') || !$request->input('class') || !$request->input('gender')) {
+			return redirect('home');
+		}
+
+		$validator = Validator::make($request->all(), [
+            'name' => 'required|string|required|without_spaces|max:12',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('home');
+        }
+
 		//creo il personaggio
 		$character = new Character;
 		$character->name = $request->input('name');
@@ -105,6 +128,11 @@ class CharacterController extends Controller
 	public function show($id)
 	{
 		$character = Character::find($id);
+
+		if (!$character) {
+			return view('errors.404');
+		}
+
 		$itemLID = $character->weapon_left;
 		$itemRID = $character->weapon_right;
 

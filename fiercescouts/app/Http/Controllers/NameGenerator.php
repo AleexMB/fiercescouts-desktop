@@ -8,8 +8,8 @@ class NameGenerator extends Controller
 {
     public static function commonNameGenerator(){
     	$finalName = "";
-		$randOne = rand(1, 9);
-		$randTwo = rand(1, 12);
+		$randOne = rand(1, 8);
+		$randTwo = rand(1, 14);
 
 		$listOne = ["Dagger", "Sword", "Staff", "Scythe", "Blade", "Claw", "Longsword", "Axe"];
 
